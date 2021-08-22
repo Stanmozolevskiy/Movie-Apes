@@ -7,18 +7,20 @@ import { SingleMovieComponent } from './single-movie/single-movie.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { MoviesComponent } from './movies/movies.component';
+import { CardLiComponent } from './card-li/card-li.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SingleMovieComponent,
-    MoviesComponent
+    MoviesComponent,
+    CardLiComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

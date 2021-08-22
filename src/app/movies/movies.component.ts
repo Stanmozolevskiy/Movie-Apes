@@ -1,5 +1,6 @@
 import { HttpService } from './../http.service';
 import { Component, OnInit } from '@angular/core';
+import { NumberSymbol } from '@angular/common';
 
 @Component({
   selector: 'movies',
@@ -8,28 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviesComponent implements OnInit {
   data:any = "";
-  genres: any = {
-    genre_ids : [28, 12, 14]
-        };
-  dataObject: any = {
-    genre_ids: []
-  };
+  genres: any = "";
    
   constructor(private servise: HttpService){}
     
   ngOnInit(): void {
-    this.servise.getAll().subscribe(res => {
-         console.log(res);
-        this.data = res;
+    this.servise.getAll().subscribe((res: any) => {
+        console.log(res.results[0]);
+        this.data = res.results;
       });
-      this.servise.getGenres().subscribe(res=> {
-        // console.log(res)
-        this.genres = res;
+      this.servise.getGenres().subscribe( (res:any)=> {
+        this.genres = res.genres;
       });
   }
 
-  // public mapGenres(dataObject: any):any{
-  //  return dataObject.genre_ids.map( x:any => this.genres.filter( y=> x == y.id)).map(genre => genre[0].name)[0]
-  // }
-
+  // mappes list of gsenres from one API call to a call that provides the movies
+  // and returns an array with genres 
+  mapGenres(movieObject: any):[]{
+      return movieObject.map((genreFromMovie:any)=> 
+              this.genres.filter((allGenres:any) => genreFromMovie == allGenres.id))
+                        .map((gerne: any) => gerne[0].name).slice(0,2); 
+  }
 }

@@ -1,9 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class HttpService {
   private BaseUrl: string ="https://api.themoviedb.org/3/";
   private key: string = '?api_key=cc061ff1d569864c484d2086a5e5e248';
@@ -11,24 +13,13 @@ export class HttpService {
   private language: string = `&language=en-US`;
   private sort: string = `&sort_by=popularity.desc`;
   private includeVideo: string = `&include_video=false`;
-  private page: string = `&page=2`;
+  private page: string = `&page=1`;
   private genresUrl = `genre/movie/list`;
   
 
- // https://api.themoviedb.org/3/
- // discover/
- // movie
- // ?api_key=cc061ff1d569864c484d2086a5e5e248
- // &language=en-US 
- // &sort_by=popularity.desc
- // &include_adult=false
- // &include_video=false
- // &page=1
- // &with_watch_monetization_types=flatrate
-
   constructor(private HttpClient: HttpClient) { }
 
-  get(subject: string, id: string) {
+  get(subject: string, id: string){
     return this.HttpClient.get(`${this.BaseUrl}/${subject}/${id}${this.key}`);
   };
   getGenres(){
