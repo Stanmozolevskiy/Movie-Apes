@@ -8,19 +8,23 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { MoviesComponent } from './movies/movies.component';
 import { CardLiComponent } from './card-li/card-li.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SingleMovieComponent,
     MoviesComponent,
-    CardLiComponent
+    CardLiComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

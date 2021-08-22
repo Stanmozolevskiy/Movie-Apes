@@ -928,21 +928,19 @@
                             <div class="tab-pane fade show active" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab">
                                 <div class="border-bottom border-gray-3800 mb-4 pb-5">
                                     <div class="row mx-n2" >
-                                       
-
                                             <div class="col-md-3 col-lg-3 px-2" *ngFor="let movie of data; index as i" >
                                                 <div class="product mb-4">
                                                     <div class="product-image mb-2">
-                                                        <a class="d-block position-relative stretched-link" href="../single-movies/single-movies-v1.html">
-                                                            <img class="img-fluid" src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="Image-Description">
+                                                        <a class="d-block position-relative stretched-link" routerLink="/movie/{{movie.id}}" >
+                                                            <img class="img-fluid"  src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="Image-Description">
                                                         </a>
                                                     </div>
                                                     <div class="product-meta font-size-12">
-                                                        <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary" tabindex="0">{{movie.release_date.split("-",1)}}</a></span>
+                                                        <span><a routerLink="/movie/{{movie.id}}" class="h-g-primary" tabindex="0">{{movie.release_date.split("-",1)}}</a></span>
                                                         <card-li [data]="mapGenres(movie.genre_ids)"></card-li>
                                                     </div>
                                                     <h6 class="font-size-1 font-weight-bold mb-0 product-title d-inline-block">
-                                                        <a href="../single-movies/single-movies-v1.html">{{movie.title}}</a>
+                                                        <a routerLink="/movie/{{movie.id}}">{{movie.title}}</a>
                                                     </h6>
                                                 </div>
                                             </div>
@@ -957,16 +955,16 @@
                                         <div class="col px-2" *ngFor="let movie of data; index as i">
                                             <div class="product mb-4">
                                                 <div class="product-image mb-2">
-                                                    <a class="d-block position-relative stretched-link" href="../single-movies/single-movies-v1.html">
+                                                    <a class="d-block position-relative stretched-link" routerLink="/movie/{{movie.id}}">
                                                         <img class="img-fluid" src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="Image-Description">
                                                     </a>
                                                 </div>
                                                 <div class="product-meta font-size-12">
-                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary" tabindex="0">{{movie.release_date.split("-",1)}}</a></span>
+                                                    <span><a routerLink="/movie/{{movie.id}}" class="h-g-primary" tabindex="0">{{movie.release_date.split("-",1)}}</a></span>
                                                     <card-li [data]="mapGenres(movie.genre_ids)"></card-li>
                                                 </div>
                                                 <h6 class="font-size-1 font-weight-bold mb-0 product-title d-inline-block">
-                                                    <a href="../single-movies/single-movies-v1.html">Black Mirror</a>
+                                                    <a routerLink="/movie/{{movie.id}}">Black Mirror</a>
                                                 </h6>
                                             </div>
                                         </div>
@@ -980,25 +978,25 @@
                                     <div class="row no-gutters border-bottom border-gray-3800 py-4">
                                         <div class="col-md-2">
                                             <div class="product-image mb-2 mb-md-0">
-                                                <a href="../single-movies/single-movies-v1.html" class="d-inline-block position-relative stretched-link">  <img class="img-fluid" src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="Image-Description"></a>
+                                                <a routerLink="/movie/{{movie.id}}" class="d-inline-block position-relative stretched-link">  <img class="img-fluid" src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="Image-Description"></a>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="px-md-4d mt-2d">
                                                 <div class="product-meta font-size-12">
-                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary" tabindex="0">{{movie.release_date.split("-",1)}}</a></span>
+                                                    <span><a routerLink="/movie/{{movie.id}}" class="h-g-primary" tabindex="0">{{movie.release_date.split("-",1)}}</a></span>
                                                         <card-li [data]="mapGenres(movie.genre_ids)"></card-li>
                                                 </div>
                                                 <div class="font-size-17 font-weight-bold mb-2 product-title d-inline-block">
-                                                    <a href="../single-movies/single-movies-v1.html">{{movie.title}}</a>
+                                                    <a routerLink="/movie/{{movie.id}}">{{movie.title}}</a>
                                                 </div>
                                                 <p class="font-size-1 line-clamp-1 text-gray-1300 mb-7">{{movie.overview}}</p>
                                                 <div class="d-md-flex">
-                                                    <a href="../single-movies/single-movies-v1.html" class="btn btn-gray-1 d-flex align-items-center justify-content-center mb-3 mb-md-0 font-size-12 px-3 h-44rem font-secondary" tabindex="0">
+                                                    <a routerLink="/movie/{{movie.id}}" class="btn btn-gray-1 d-flex align-items-center justify-content-center mb-3 mb-md-0 font-size-12 px-3 h-44rem font-secondary" tabindex="0">
                                                         <span class="mx-1">WATCH NOW</span>
                                                     </a>
 
-                                                    <a href="../single-movies/single-movies-v1.html" class="d-flex align-items-center justify-content-center font-secondary font-size-12 text-white font-weight-bold ml-md-3 pl-md-1" tabindex="0">+ PLAYLIST</a>
+                                                    <a routerLink="/movie/{{movie.id}}" class="d-flex align-items-center justify-content-center font-secondary font-size-12 text-white font-weight-bold ml-md-3 pl-md-1" tabindex="0">+ PLAYLIST</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -1023,25 +1021,25 @@
                                     <div class="row no-gutters border-bottom border-gray-3800 py-4">
                                         <div class="col-md-1">
                                             <div class="product-image mb-2 mb-md-0">
-                                                <a href="../single-movies/single-movies-v1.html" class="d-inline-block position-relative stretched-link"> <img class="img-fluid" src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="Image-Description"></a>
+                                                <a routerLink="/movie/{{movie.id}}" class="d-inline-block position-relative stretched-link"> <img class="img-fluid" src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="Image-Description"></a>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="px-md-4d mt-2d">
                                                 <div class="product-meta font-size-12">
-                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary" tabindex="0">{{movie.release_date.split("-",1)}}</a></span>
+                                                    <span><a routerLink="/movie/{{movie.id}}" class="h-g-primary" tabindex="0">{{movie.release_date.split("-",1)}}</a></span>
                                                     <card-li [data]="mapGenres(movie.genre_ids)"></card-li>
                                                 </div>
                                                 <div class="font-size-1 font-weight-bold mb-2 product-title d-inline-block">
-                                                    <a href="../single-movies/single-movies-v1.html">{{movie.title}}</a>
+                                                    <a routerLink="/movie/{{movie.id}}">{{movie.title}}</a>
                                                 </div>
                                                 <p class="font-size-1 line-clamp-1 text-gray-1300 mb-4">{{movie.overview}}</p>
                                                 <div class="d-md-flex">
-                                                    <a href="../single-movies/single-movies-v1.html" class="btn btn-gray-1 d-flex align-items-center justify-content-center mb-3 mb-md-0 font-size-12 px-3 h-44rem font-secondary" tabindex="0">
+                                                    <a routerLink="/movie/{{movie.id}}" class="btn btn-gray-1 d-flex align-items-center justify-content-center mb-3 mb-md-0 font-size-12 px-3 h-44rem font-secondary" tabindex="0">
                                                         <span class="mx-1">WATCH NOW</span>
                                                     </a>
 
-                                                    <a href="../single-movies/single-movies-v1.html" class="d-flex align-items-center justify-content-center font-secondary font-size-12 text-white font-weight-bold ml-md-3 pl-md-1" tabindex="0">+ PLAYLIST</a>
+                                                    <a routerLink="/movie/{{movie.id}}" class="d-flex align-items-center justify-content-center font-secondary font-size-12 text-white font-weight-bold ml-md-3 pl-md-1" tabindex="0">+ PLAYLIST</a>
                                                 </div>
                                             </div>
                                         </div>
