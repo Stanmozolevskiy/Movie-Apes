@@ -13,7 +13,7 @@ export class HttpService {
   private language: string = `&language=en-US`;
   private sort: string = `&sort_by=popularity.desc`;
   private includeVideo: string = `&include_video=false`;
-  private page: string = `&page=1`;
+  private page: string = `&page=400`;
   private genresUrl = `genre/movie/list`;
   
 

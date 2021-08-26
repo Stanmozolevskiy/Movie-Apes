@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div>
-                                <img class="img-fluid" src="https://image.tmdb.org/t/p/w300/{{data.poster_path}}" alt="Image-Description">
+                                <img class="img-fluid"  src="https://image.tmdb.org/t/p/w300/{{data.poster_path}}" alt="Image-Description">
                             </div>
                             <div class="bg-gray-3100">
                                 <div>
@@ -76,7 +76,7 @@
                                                 </div>
                                             </div>
                                             <ul class="list-unstyled nav nav-meta font-secondary mb-3 pb-1 flex-nowrap flex-lg-wrap overflow-auto overflow-lg-hidden">
-                                                <li class="text-white flex-shrink-0 flex-shrink-lg-1">{{data.release_date.split("-",1)}}</li>
+                                                <li class="text-white flex-shrink-0 flex-shrink-lg-1">{{data.release_date?.split("-",1)}}</li>
                                                 <li class="text-white flex-shrink-0 flex-shrink-lg-1">{{data.runtime}} m</li>
                                                 <li class="text-white flex-shrink-0 flex-shrink-lg-1">{{data.status}}</li>
                                                 <li class="text-white flex-shrink-0 flex-shrink-lg-1">
@@ -86,24 +86,13 @@
                                             </ul>
                                             <p class="text-gray-5500 font-size-16 mb-5 pb-1 text-lh-md">{{data.overview}}</p>
                                             <div class="d-flex justify-content-between">
-                                                <div>
+                                                <div *ngFor="let cast of mainCast">
                                                     <h6 class="font-size-15 mb-0">
-                                                        <a href="#" class="text-white">Robert Rodriguez</a>
+                                                        <a href="#" class="text-white">{{cast.name}}</a>
                                                     </h6>
-                                                    <span class="text-white font-size-13">Director</span>
+                                                    <span class="text-white font-size-13">{{cast.job}}</span>
                                                 </div>
-                                                <div>
-                                                    <h6 class="font-size-15 mb-0">
-                                                        <a href="#" class="text-white">Martin McKandy</a>
-                                                    </h6>
-                                                    <span class="text-white font-size-13">Screenplay</span>
-                                                </div>
-                                                <div>
-                                                    <h6 class="font-size-15 mb-0">
-                                                        <a href="#" class="text-white">Anna martez</a>
-                                                    </h6>
-                                                    <span class="text-white font-size-13">Producer</span>
-                                                </div>
+                                               
                                             </div>
                                         </div>
                                     </div>
@@ -120,178 +109,30 @@
                                 <div class="mb-6 mb-lg-8">
                                     <div class="font-size-26 text-gray-5500 mb-3 pb-1">You Also May Like</div>
                                     <div class="row row-cols-1 row-cols-md-3 row-cols-xl-6 mx-n2 dark">
-                                        <div class="col-xl px-2">
+                                       
+                                        <div class="col-xl px-2" *ngFor="let item of similarMovies.slice(0,6)">
                                             <div class="product mb-5 mb-xl-0">
                                                 <div class="product-image mb-2">
                                                     <a href="../single-movies/single-movies-v1.html" class="d-inline-block position-relative stretched-link">
-                                                        <img class="img-fluid" src="https://placehold.it/300x450" alt="Image Description">
+                                                        <img class="img-fluid"  src="https://image.tmdb.org/t/p/w200/{{item.poster_path}}" alt="Image Description">
                                                     </a>
                                                 </div>
                                                 <div class="product-meta font-size-12 mb-1">
-                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">2020</a></span>
+                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">{{item.release_date?.split("-",1)}}</a></span>
                                                     <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">Action</a></span>
                                                     <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">Fantacys</a></span>
                                                 </div>
-                                                <div class="product-title font-weight-bold font-size-1"><a href="../single-movies/single-movies-v1.html">Journey's End</a></div>
+                                                <div class="product-title font-weight-bold font-size-1"><a href="../single-movies/single-movies-v1.html">{{item.title}}</a></div>
                                             </div>
                                         </div>
-                                        <div class="col-xl px-2">
-                                            <div class="product mb-5 mb-xl-0">
-                                                <div class="product-image mb-2">
-                                                    <a href="../single-movies/single-movies-v1.html" class="d-inline-block position-relative stretched-link">
-                                                        <img class="img-fluid" src="https://placehold.it/300x450" alt="Image Description">
-                                                    </a>
-                                                </div>
-                                                <div class="product-meta font-size-12 mb-1">
-                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">2020</a></span>
-                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">Action</a></span>
-                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">Horror</a></span>
-                                                </div>
-                                                <div class="product-title font-weight-bold font-size-1"><a href="../single-movies/single-movies-v1.html">The Strangers: Prey At Night</a></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl px-2">
-                                            <div class="product mb-5 mb-xl-0">
-                                                <div class="product-image mb-2">
-                                                    <a href="../single-movies/single-movies-v1.html" class="d-inline-block position-relative stretched-link">
-                                                        <img class="img-fluid" src="https://placehold.it/300x450" alt="Image Description">
-                                                    </a>
-                                                </div>
-                                                <div class="product-meta font-size-12 mb-1">
-                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">2020</a></span>
-                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">Action</a></span>
-                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">Adventures</a></span>
-                                                </div>
-                                                <div class="product-title font-weight-bold font-size-1"><a href="../single-movies/single-movies-v1.html">The Maze Runner</a></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl px-2">
-                                            <div class="product mb-5 mb-xl-0">
-                                                <div class="product-image mb-2">
-                                                    <a href="../single-movies/single-movies-v1.html" class="d-inline-block position-relative stretched-link">
-                                                        <span class="position-absolute px-2d line-height-lg bg-primary rounded content-centered-x z-index-2 mt-n2 text-white font-size-12">Featured</span>
-                                                        <img class="img-fluid" src="https://placehold.it/300x450" alt="Image Description">
-                                                    </a>
-                                                </div>
-                                                <div class="product-meta font-size-12 mb-1">
-                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">2020</a></span>
-                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">Action</a></span>
-                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">Mystery</a></span>
-                                                </div>
-                                                <div class="product-title font-weight-bold font-size-1"><a href="../single-movies/single-movies-v1.html">Don Of Thieves</a></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl px-2">
-                                            <div class="product mb-5 mb-lg-0">
-                                                <div class="product-image mb-2">
-                                                    <a href="../single-movies/single-movies-v1.html" class="d-inline-block position-relative stretched-link">
-                                                        <img class="img-fluid" src="https://placehold.it/300x450" alt="Image Description">
-                                                    </a>
-                                                </div>
-                                                <div class="product-meta font-size-12 mb-1">
-                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">2020</a></span>
-                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">Action</a></span>
-                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">Family</a></span>
-                                                </div>
-                                                <div class="product-title font-weight-bold font-size-1"><a href="../single-movies/single-movies-v1.html">I Can Only Imagine</a></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl px-2">
-                                            <div class="product mb-5 mb-lg-0">
-                                                <div class="product-image mb-2">
-                                                    <a href="../single-movies/single-movies-v1.html" class="d-inline-block position-relative stretched-link">
-                                                        <img class="img-fluid" src="https://placehold.it/300x450" alt="Image Description">
-                                                    </a>
-                                                </div>
-                                                <div class="product-meta font-size-12 mb-1">
-                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">2020</a></span>
-                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">Action</a></span>
-                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">Comedy</a></span>
-                                                </div>
-                                                <div class="product-title font-weight-bold font-size-1"><a href="../single-movies/single-movies-v1.html">The Begin Again</a></div>
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </div>
-                                <div class="mb-6 mb-lg-8">
-                                    <div class="font-size-26 text-gray-5500 mb-3 pb-1">Also Directed by Robert Rodriguez</div>
-                                    <div class="row no-gutters dark">
-                                        <div class="col-md-6">
-                                            <div class="product mb-5 mb-md-0">
-                                                <div class="row no-gutters">
-                                                    <div class="col-md-3 col-lg-2">
-                                                        <div class="product-image mb-2 mb-md-0">
-                                                            <a href="../single-movies/single-movies-v1.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/300x450" alt="Image Description"></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md">
-                                                        <div class=" px-md-4d d-flex justify-content-between d-md-block">
-                                                            <div>
-                                                                <div class="product-meta font-size-12">
-                                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary" tabindex="0">2020</a></span>
-                                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary" tabindex="0">Action</a></span>
-                                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary" tabindex="0">Mystery</a></span>
-                                                                </div>
-                                                                <div class="font-size-1 font-weight-bold mb-2 product-title d-inline-block">
-                                                                    <a href="../single-movies/single-movies-v1.html">Black Mirror</a>
-                                                                </div>
-                                                                <p class="mb-2 font-size-1 line-clamp-1 text-gray-1300">In 1984, a young programmer begins to question reality as he works to adapt a fantasy novel into a video game.</p>
-                                                            </div>
-                                                            <div class="d-flex align-items-center">
-                                                                <div class="rating-number position-relative font-size-42">
-                                                                    <i class="fas fa-star d-flex justify-content-center">
-                                                                    </i>
-                                                                    <span class="font-size-13 font-weight-bold text-gray-1800 position-absolute bottom-0 top-0 right-0 left-0 d-flex align-items-center justify-content-center">8.0</span>
-                                                                </div>
-
-                                                                <div class="font-size-1 text-gray-1300 text-center text-lh-1 ml-3">
-                                                                    <span>3 Votes</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="product">
-                                                <div class="row no-gutters">
-                                                    <div class="col-md-3 col-lg-2">
-                                                        <div class="product-image mb-2 mb-md-0">
-                                                            <a href="../single-movies/single-movies-v1.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://placehold.it/300x450" alt="Image Description"></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md">
-                                                        <div class="px-md-4d d-flex justify-content-between d-md-block ">
-                                                            <div>
-                                                                <div class="product-meta font-size-12">
-                                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary" tabindex="0">2020</a></span>
-                                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary" tabindex="0">Action</a></span>
-                                                                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary" tabindex="0">Adventures</a></span>
-                                                                </div>
-                                                                <div class="font-size-1 font-weight-bold mb-2 product-title d-inline-block">
-                                                                    <a href="../single-movies/single-movies-v1.html">Renegades</a>
-                                                                </div>
-                                                                <p class="mb-2 font-size-1 line-clamp-1 text-gray-1300">A team of Navy SEALs discover an underwater treasure in a Bosnian lake.</p>
-                                                            </div>
-                                                            <div class="d-flex align-items-center">
-                                                                <div class="rating-number position-relative font-size-42">
-                                                                    <i class="fas fa-star d-flex justify-content-center">
-                                                                    </i>
-                                                                    <span class="font-size-13 font-weight-bold text-gray-1800 position-absolute bottom-0 top-0 right-0 left-0 d-flex align-items-center justify-content-center">8.0</span>
-                                                                </div>
-
-                                                                <div class="font-size-1 text-gray-1300 text-center text-lh-1 ml-3">
-                                                                    <span>1 Vote</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
+                      
+                                    <also-directed-by [director]="director" [data]="alsoDirector"></also-directed-by>
+                                    
+                       
                                 <div class="mb-6 mb-lg-9 pb-lg-1">
                                     <div class="font-size-26 text-gray-5500 mb-3 pb-1">Our Review</div>
                                     <div>

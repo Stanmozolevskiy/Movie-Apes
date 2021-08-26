@@ -937,7 +937,7 @@
                                                     </div>
                                                     <div class="product-meta font-size-12">
                                                         <span><a routerLink="/movie/{{movie.id}}" class="h-g-primary" tabindex="0">{{movie.release_date.split("-",1)}}</a></span>
-                                                        <card-li [data]="mapGenres(movie.genre_ids)"></card-li>
+                                                        <card-li [data]="mapGenres(movie.genre_ids, genres)"></card-li>
                                                     </div>
                                                     <h6 class="font-size-1 font-weight-bold mb-0 product-title d-inline-block">
                                                         <a routerLink="/movie/{{movie.id}}">{{movie.title}}</a>
@@ -961,7 +961,7 @@
                                                 </div>
                                                 <div class="product-meta font-size-12">
                                                     <span><a routerLink="/movie/{{movie.id}}" class="h-g-primary" tabindex="0">{{movie.release_date.split("-",1)}}</a></span>
-                                                    <card-li [data]="mapGenres(movie.genre_ids)"></card-li>
+                                                    <card-li [data]="mapGenres(movie.genre_ids, genres)"></card-li>
                                                 </div>
                                                 <h6 class="font-size-1 font-weight-bold mb-0 product-title d-inline-block">
                                                     <a routerLink="/movie/{{movie.id}}">Black Mirror</a>
@@ -985,7 +985,7 @@
                                             <div class="px-md-4d mt-2d">
                                                 <div class="product-meta font-size-12">
                                                     <span><a routerLink="/movie/{{movie.id}}" class="h-g-primary" tabindex="0">{{movie.release_date.split("-",1)}}</a></span>
-                                                        <card-li [data]="mapGenres(movie.genre_ids)"></card-li>
+                                                        <card-li [data]="mapGenres(movie.genre_ids, genres)"></card-li>
                                                 </div>
                                                 <div class="font-size-17 font-weight-bold mb-2 product-title d-inline-block">
                                                     <a routerLink="/movie/{{movie.id}}">{{movie.title}}</a>
@@ -1028,7 +1028,7 @@
                                             <div class="px-md-4d mt-2d">
                                                 <div class="product-meta font-size-12">
                                                     <span><a routerLink="/movie/{{movie.id}}" class="h-g-primary" tabindex="0">{{movie.release_date.split("-",1)}}</a></span>
-                                                    <card-li [data]="mapGenres(movie.genre_ids)"></card-li>
+                                                    <card-li [data]="mapGenres(movie.genre_ids, genres)"></card-li>
                                                 </div>
                                                 <div class="font-size-1 font-weight-bold mb-2 product-title d-inline-block">
                                                     <a routerLink="/movie/{{movie.id}}">{{movie.title}}</a>

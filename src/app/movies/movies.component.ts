@@ -1,6 +1,5 @@
 import { HttpService } from './../http.service';
 import { Component, OnInit } from '@angular/core';
-import { NumberSymbol } from '@angular/common';
 
 @Component({
   selector: 'movies',
@@ -15,7 +14,7 @@ export class MoviesComponent implements OnInit {
     
   ngOnInit(): void {
     this.servise.getAll().subscribe((res: any) => {
-        console.log(res.results[0]);
+       // console.log(res.results[0]);
         this.data = res.results;
       });
       this.servise.getGenres().subscribe( (res:any)=> {
@@ -25,9 +24,9 @@ export class MoviesComponent implements OnInit {
 
   // mappes list of gsenres from one API call to a call that provides the movies
   // and returns an array with genres 
-  mapGenres(movieObject: any):[]{
+  mapGenres(movieObject: any, genresArray: any):[]{
       return movieObject.map((genreFromMovie:any)=> 
-              this.genres.filter((allGenres:any) => genreFromMovie == allGenres.id))
+              genresArray.filter((allGenres:any) => genreFromMovie == allGenres.id))
                         .map((gerne: any) => gerne[0].name).slice(0,2); 
   }
 }
