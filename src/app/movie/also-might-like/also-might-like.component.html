@@ -1,0 +1,22 @@
+<div class="mb-6 mb-lg-8">
+    <div class="font-size-26 text-gray-5500 mb-3 pb-1">You Also May Like</div>
+    <div class="row row-cols-1 row-cols-md-3 row-cols-xl-6 mx-n2 dark">
+       
+        <div class="col-xl px-2" *ngFor="let item of data">
+            <div class="product mb-5 mb-xl-0">
+                <div class="product-image mb-2">
+                    <a href="../single-movies/single-movies-v1.html" class="d-inline-block position-relative stretched-link">
+                        <img class="img-fluid"  src="https://image.tmdb.org/t/p/w200/{{item.poster_path}}" alt="Image Description">
+                    </a>
+                </div>
+                <div class="product-meta font-size-12 mb-1">
+                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">{{item.release_date?.split("-",1)}}</a></span>
+                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">Action</a></span>
+                    <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">Fantacys</a></span>
+                </div>
+                <div class="product-title font-weight-bold font-size-1"><a href="../single-movies/single-movies-v1.html">{{item.title}}</a></div>
+            </div>
+        </div>
+
+    </div>
+</div>

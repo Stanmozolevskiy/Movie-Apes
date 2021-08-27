@@ -47,5 +47,11 @@ export class DataHelper {
       
       return returnArray.slice(( returnArray.length -2) , returnArray.length);
     }
+    public static MostPopular(peopleArray:any){
+     return peopleArray.filter((value:any, i:any, self:any)=> self.indexOf(value) === i)
+                        .sort((x:any, y:any)=> x.popularity - y.popularity)
+                        .splice(peopleArray.length - 6, peopleArray.length)
+                        .sort((x:any, y:any)=> y.popularity - x.popularity);
+    }
 }
      

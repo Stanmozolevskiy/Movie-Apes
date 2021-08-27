@@ -10,6 +10,8 @@ import { MoviesComponent } from './movies/movies.component';
 import { CardLiComponent } from './card-li/card-li.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AlsoDirectedByComponent } from './movie/also-directed-by/also-directed-by.component';
+import { AlsoMightLikeComponent } from './movie/also-might-like/also-might-like.component';
+import { CrewAndCastComponent } from './movie/crew-and-cast/crew-and-cast.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { AlsoDirectedByComponent } from './movie/also-directed-by/also-directed-
     MoviesComponent,
     CardLiComponent,
     NavbarComponent,
-    AlsoDirectedByComponent
+    AlsoDirectedByComponent,
+    AlsoMightLikeComponent,
+    CrewAndCastComponent
   ],
   imports: [
     BrowserModule,
