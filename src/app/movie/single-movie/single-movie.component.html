@@ -1,7 +1,9 @@
 <!-- ========== MAIN CONTENT ========== -->
     <main id="content">
         <div class="bg-gray-1100 space-bottom-2 space-bottom-lg-3">
-            <div class="container px-md-6">
+            <div class="bg-img-hero position-relative" style="background-image: url(https://image.tmdb.org/t/p/original/{{data.backdrop_path}}); height: 350px; filter: blur(3px);"></div>
+          
+            <!-- <div class="container px-md-6">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb dark font-size-1">
                         <li class="breadcrumb-item"><a href="../home/index.html" class="text-gray-1300">Home</a></li>
@@ -9,13 +11,13 @@
                         <li class="breadcrumb-item text-white active" aria-current="page"> My Generation</li>
                     </ol>
                 </nav>
-            </div>
+            </div> -->
             <section>
                 <div class="container px-md-6">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-3" >
                             <div>
-                                <img class="img-fluid"  src="https://image.tmdb.org/t/p/w300/{{data.poster_path}}" alt="Image-Description">
+                                <img class="img-fluid" src="https://image.tmdb.org/t/p/w300/{{data.poster_path}}" alt="Image-Description">
                             </div>
                             <div class="bg-gray-3100">
                                 <div>
@@ -108,6 +110,7 @@
                                 </div>
 
                                 <also-might-like [data]="similarMovies.slice(0,6)"></also-might-like>    
+
                                 <div class="mb-6 mb-lg-8 pb-lg-1">
                                     <div class="row">
                                         <div class="col-lg-6">
@@ -116,30 +119,27 @@
 
                                                 <table>
                                                     <tbody>
-                                                        <tr>
+                                                        <!-- <tr>
                                                             <th class="text-gray-5500 font-weight-normal">Music</th>
                                                             <td><span class="font-weight-medium"><a href="#">Alan Silvestri</a></span></td>
+                                                        </tr> -->
+                                                        <tr>
+                                                            <th class="text-gray-5500 w-160rem font-weight-normal pb-6">Production</th>
+                                                            <td><span class="d-block font-weight-medium" *ngFor="let company of data.production_companies"><a href="#">{{company.name}}</a></span> <span class="d-block font-weight-medium"> <a href="#">Jim Starlin</a></span> <span class="font-weight-medium"> <a href="#">Trent Opaloch</a></span></td>
                                                         </tr>
                                                         <tr>
-                                                            <th class="text-gray-5500 w-160rem font-weight-normal pb-6">Photos</th>
-                                                            <td><span class="d-block font-weight-medium"><a href="#">Jack Kirby</a></span> <span class="d-block font-weight-medium"> <a href="#">Jim Starlin</a></span> <span class="font-weight-medium"> <a href="#">Trent Opaloch</a></span></td>
+                                                            <th class="text-gray-5500 w-160rem font-weight-normal pb-4">Budjet</th>
+                                                            <td><span class="d-block text-gray-5500 font-weight-medium">${{data.budget}} out of USA</span>
                                                         </tr>
                                                         <tr>
-                                                            <th class="text-gray-5500 w-160rem font-weight-normal pb-4">Boxoffice</th>
-                                                            <td><span class="d-block text-gray-5500 font-weight-medium">$1 845 482 612 out of USA</span><span class="text-gray-5500 font-weight-medium"> $771 368 375 in USA</span></td>
+                                                            <th class="text-gray-5500 w-160rem font-weight-normal pb-4">Revenue</th>
+                                                            <td><span class="text-gray-5500 font-weight-medium"> ${{data.revenue}}</span></td>
                                                         </tr>
                                                         <tr>
                                                             <th class="text-gray-5500 w-160rem font-weight-normal">Location</th>
-                                                            <td><span class="text-gray-5500 font-weight-medium">USA</span></td>
+                                                            <td><span class="text-gray-5500 font-weight-medium">{{data.production_countries[0].name}}</span></td>
                                                         </tr>
-                                                        <tr>
-                                                            <th class="text-gray-5500 w-160rem font-weight-normal">Producer</th>
-                                                            <td><span class="text-gray-5500 font-weight-medium">Nerovision Co</span></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="text-gray-5500 w-160rem font-weight-normal">Director</th>
-                                                            <td><span class="text-gray-5500 font-weight-medium">M. Night Shyamalan</span></td>
-                                                        </tr>
+                                                       
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -149,7 +149,8 @@
                                             <p class="text-gray-5500 mb-0 text-lh-md">Praesent iaculis, purus ac vehicula mattis, arcu lorem blandit nisl, non laoreet dui mi eget elit. Donec porttitor ex vel augue maximus luctus. Vivamus finibus nibh eu nunc volutpat suscipit. Nam vulputate libero quis nisi euismod rhoncus. Sed eu euismod felis. Aenean ullamcorper dapibus odio ac tempor. Aliquam iaculis, quam vitae imperdiet consectetur, mi ante semper metus, ac efficitur nisi justo ut eros.</p>
                                         </div>
                                     </div>
-                                </div>             
+                                </div>   
+
                                 <also-directed-by [director]="director" [data]="alsoDirector"></also-directed-by>
                                 <crew-and-cast [crew]="crew" [cast]="cast"></crew-and-cast>
 
