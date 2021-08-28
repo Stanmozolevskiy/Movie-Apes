@@ -111,53 +111,11 @@
 
                                 <also-might-like [data]="similarMovies.slice(0,6)"></also-might-like>    
 
-                                <div class="mb-6 mb-lg-8 pb-lg-1">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="mb-5 mb-lg-0">
-                                                <div class="font-size-26 text-gray-5500 mb-3 pb-1">Details Of Movie</div>
+                                <trailers [data]="trailers.slice(0,4)" ></trailers>
 
-                                                <table>
-                                                    <tbody>
-                                                        <!-- <tr>
-                                                            <th class="text-gray-5500 font-weight-normal">Music</th>
-                                                            <td><span class="font-weight-medium"><a href="#">Alan Silvestri</a></span></td>
-                                                        </tr> -->
-                                                        <tr>
-                                                            <th class="text-gray-5500 w-160rem font-weight-normal pb-6">Production</th>
-                                                            <td><span class="d-block font-weight-medium" *ngFor="let company of data.production_companies"><a href="#">{{company.name}}</a></span> <span class="d-block font-weight-medium"> <a href="#">Jim Starlin</a></span> <span class="font-weight-medium"> <a href="#">Trent Opaloch</a></span></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="text-gray-5500 w-160rem font-weight-normal pb-4">Budjet</th>
-                                                            <td><span class="d-block text-gray-5500 font-weight-medium">${{data.budget}} out of USA</span>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="text-gray-5500 w-160rem font-weight-normal pb-4">Revenue</th>
-                                                            <td><span class="text-gray-5500 font-weight-medium"> ${{data.revenue}}</span></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="text-gray-5500 w-160rem font-weight-normal">Location</th>
-                                                            <td><span class="text-gray-5500 font-weight-medium">{{data.production_countries[0].name}}</span></td>
-                                                        </tr>
-                                                       
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="description-title font-size-26 text-gray-5500 mb-3 pb-1">Fun Facts of Movie</div>
-                                            <p class="text-gray-5500 mb-0 text-lh-md">Praesent iaculis, purus ac vehicula mattis, arcu lorem blandit nisl, non laoreet dui mi eget elit. Donec porttitor ex vel augue maximus luctus. Vivamus finibus nibh eu nunc volutpat suscipit. Nam vulputate libero quis nisi euismod rhoncus. Sed eu euismod felis. Aenean ullamcorper dapibus odio ac tempor. Aliquam iaculis, quam vitae imperdiet consectetur, mi ante semper metus, ac efficitur nisi justo ut eros.</p>
-                                        </div>
-                                    </div>
-                                </div>   
-
-                                <also-directed-by [director]="director" [data]="alsoDirector"></also-directed-by>
+                                <also-directed-by [director]="director" [data]="alsoDirector" [directorBio]="directorBio" ></also-directed-by>
                                 <crew-and-cast [crew]="crew" [cast]="cast"></crew-and-cast>
 
-
-                                
-
-                                
                                 <div class="mb-6">
                                     <div class="description-title font-size-26 text-gray-5500 mb-3 pb-1">User Reviews</div>
                                     <div class="border-bottom border-gray-5600 mb-4 pb-4">

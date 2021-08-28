@@ -8,6 +8,7 @@ import {  Component, OnInit, Input, } from '@angular/core';
 export class AlsoDirectedByComponent implements OnInit {
   @Input() data:any;
   @Input() director:any;
+  @Input() directorBio:any;
   
   constructor() { }
   ngOnInit(): void {

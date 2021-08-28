@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AlsoDirectedByComponent } from './movie/also-directed-by/also-directed-by.component';
 import { AlsoMightLikeComponent } from './movie/also-might-like/also-might-like.component';
 import { CrewAndCastComponent } from './movie/crew-and-cast/crew-and-cast.component';
+import { TrailersComponent } from './movie/trailers/trailers.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { CrewAndCastComponent } from './movie/crew-and-cast/crew-and-cast.compon
     NavbarComponent,
     AlsoDirectedByComponent,
     AlsoMightLikeComponent,
-    CrewAndCastComponent
+    CrewAndCastComponent,
+    TrailersComponent
   ],
   imports: [
     BrowserModule,
