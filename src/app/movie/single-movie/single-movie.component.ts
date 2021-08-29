@@ -19,6 +19,7 @@ export class SingleMovieComponent implements OnInit {
   review:any ="";
   directorBio:any = "";
   trailers:any = "";
+  keywords:any = "";
 
   constructor(private servise: HttpService, private route: ActivatedRoute){}
 
@@ -60,7 +61,10 @@ export class SingleMovieComponent implements OnInit {
     //call for "Trailers" only going to show up if ther is a director
     this.servise.get("movie",  id.params.id +"/videos").subscribe((responce:any)=>{
       this.trailers = responce.results;
-      console.log(responce.results)
+        })
+    //call for "Keywords"
+    this.servise.get("movie",  id.params.id +"/keywords").subscribe((responce:any)=>{
+      this.keywords = responce.keywords.slice(0,4);
         })
     
     });

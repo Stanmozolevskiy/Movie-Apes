@@ -14,7 +14,7 @@ import { AlsoMightLikeComponent } from './movie/also-might-like/also-might-like.
 import { CrewAndCastComponent } from './movie/crew-and-cast/crew-and-cast.component';
 import { TrailersComponent } from './movie/trailers/trailers.component';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { PaginationComponent } from './pagination/pagination.component'; // <-- import the module
+import { MovieInfoComponent } from './movie/movie-info/movie-info.component'
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import { PaginationComponent } from './pagination/pagination.component'; // <-- 
     AlsoMightLikeComponent,
     CrewAndCastComponent,
     TrailersComponent,
-    PaginationComponent
+    MovieInfoComponent,
   ],
   imports: [
     BrowserModule,
