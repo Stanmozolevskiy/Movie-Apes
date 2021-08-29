@@ -29,7 +29,7 @@ export class SingleMovieComponent implements OnInit {
     // calling api with specific id to get the movie data
     this.servise.get('movie', id.params.id).subscribe(response => {
         this.data = response; 
-        // console.log(this.data)
+        console.log(response)
         });
     //call for the recomended movies
     this.servise.get("movie", id.params.id+"/similar").subscribe((res: any)=>{
@@ -66,7 +66,6 @@ export class SingleMovieComponent implements OnInit {
     this.servise.get("movie",  id.params.id +"/keywords").subscribe((responce:any)=>{
       this.keywords = responce.keywords.slice(0,4);
         })
-    
     });
   }
 
