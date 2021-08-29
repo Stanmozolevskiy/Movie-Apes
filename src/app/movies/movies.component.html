@@ -2,12 +2,6 @@
 <main id="content">
     <div class="bg-gray-1100 dark">
         <div class="container px-md-5">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb dark font-size-1">
-                    <li class="breadcrumb-item"><a href="../home/index.html" class="text-gray-1300">Home</a></li>
-                    <li class="breadcrumb-item text-white active" aria-current="page">Movies</li>
-                </ol>
-            </nav>
             <div class="row">
                 <div class="col-lg-auto d-none d-xl-block">
                     <div class="w-md-352rem space-bottom-2">
@@ -929,7 +923,7 @@
                             <div class="tab-pane fade show active" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab">
                                 <div class="border-bottom border-gray-3800 mb-4 pb-5">
                                     <div class="row mx-n2" >
-                                            <div class="col-md-3 col-lg-3 px-2" *ngFor="let movie of data; index as i" >
+                                            <div class="col-md-3 col-lg-3 px-2" *ngFor="let movie of data | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages }" >
                                                 <div class="product mb-4">
                                                     <div class="product-image mb-2">
                                                         <a class="d-block position-relative stretched-link" routerLink="/movie/{{movie.id}}" >
@@ -953,7 +947,7 @@
                                 <div class="border-bottom border-gray-3800 mb-4 pb-5">
                                     <div class="row row-cols-1 row-cols-md-3 row-cols-wd-5 mx-n2">
 
-                                        <div class="col px-2" *ngFor="let movie of data; index as i">
+                                        <div class="col px-2" *ngFor="let movie of data | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages };">
                                             <div class="product mb-4">
                                                 <div class="product-image mb-2">
                                                     <a class="d-block position-relative stretched-link" routerLink="/movie/{{movie.id}}">
@@ -975,7 +969,7 @@
                             </div>
                             <div class="tab-pane fade" id="pills-three-example1" role="tabpanel" aria-labelledby="pills-three-example1-tab">
 
-                                <div class="product h-btn-show dark" *ngFor="let movie of data; index as i" >
+                                <div class="product h-btn-show dark" *ngFor="let movie of data | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages }" >
                                     <div class="row no-gutters border-bottom border-gray-3800 py-4">
                                         <div class="col-md-2">
                                             <div class="product-image mb-2 mb-md-0">
@@ -1018,7 +1012,7 @@
 
                             <div class="tab-pane fade" id="pills-four-example1" role="tabpanel" aria-labelledby="pills-four-example1-tab">
                               
-                                <div class="product h-btn-show dark" *ngFor="let movie of data; index as i">
+                                <div class="product h-btn-show dark" *ngFor="let movie of data | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages }">
                                     <div class="row no-gutters border-bottom border-gray-3800 py-4">
                                         <div class="col-md-1">
                                             <div class="product-image mb-2 mb-md-0">
@@ -1062,8 +1056,9 @@
                             </div>
 
                         </div>
+                        <pagination-controls  class="pagination custom-pagination-dark justify-content-center justify-content-md-start mb-0" (pageChange)="handlePageChange($event)" ></pagination-controls>
 
-                        <div class="d-md-flex align-items-center justify-content-between">
+                        <!-- <div class="d-md-flex align-items-center justify-content-between">
                             <div class="font-secondary font-size-1 font-weight-normal text-gray-1300 text-center text-md-left mb-3 mb-md-0">Showing 1–30 of 139 results</div>
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination custom-pagination-dark justify-content-center justify-content-md-start mb-0">
@@ -1075,7 +1070,8 @@
                                     </li>
                                 </ul>
                             </nav>
-                        </div>
+                        </div> -->
+
                     </section>
                 </div>
             </div>

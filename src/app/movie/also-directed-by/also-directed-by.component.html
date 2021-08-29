@@ -9,7 +9,7 @@
                 <div class="row no-gutters">
                     <div class="col-md-3 col-lg-2">
                         <div class="product-image mb-2 mb-md-0">
-                            <a href="../single-movies/single-movies-v1.html" class="d-inline-block position-relative stretched-link"><img class="img-fluid"  src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="Image Description"></a>
+                            <a routerLink="/movie/{{movie.id}}" class="d-inline-block position-relative stretched-link"><img class="img-fluid"  src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="Image Description"></a>
                         </div>
                     </div>
                     <div class="col-md" >
@@ -22,7 +22,7 @@
                                     
                                 </div>
                                 <div class="font-size-1 font-weight-bold mb-2 product-title d-inline-block">
-                                    <a href="../single-movies/single-movies-v1.html">{{movie.original_title}}</a>
+                                    <a routerLink="/movie/{{movie.id}}">{{movie.original_title}}</a>
                                 </div>
                                 <p class="mb-2 font-size-1 line-clamp-1 text-gray-1300">{{movie.overview}}</p>
                             </div>

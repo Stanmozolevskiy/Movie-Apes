@@ -9,17 +9,25 @@ import { Component, OnInit } from '@angular/core';
 export class MoviesComponent implements OnInit {
   data:any = "";
   genres: any = "";
+  totalPages:any = "";
+  page!: number;
+
    
   constructor(private servise: HttpService){}
     
   ngOnInit(): void {
-    this.servise.getAll().subscribe((res: any) => {
-       // console.log(res.results[0]);
-        this.data = res.results;
-      });
-      this.servise.getGenres().subscribe( (res:any)=> {
-        this.genres = res.genres;
-      });
+    this.handlePageChange(1);
+    this.servise.getGenres().subscribe( (res:any)=> {
+      this.genres = res.genres;
+    });
+  }
+
+  handlePageChange(event:any = 1 ){
+    this.servise.getAll(event).subscribe((res: any) => {
+      this.data = res.results;
+      this.totalPages = res.total_pages;
+      this.page = res.page;
+    });
   }
 
   // mappes list of gsenres from one API call to a call that provides the movies

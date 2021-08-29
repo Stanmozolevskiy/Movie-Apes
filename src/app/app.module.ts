@@ -13,6 +13,8 @@ import { AlsoDirectedByComponent } from './movie/also-directed-by/also-directed-
 import { AlsoMightLikeComponent } from './movie/also-might-like/also-might-like.component';
 import { CrewAndCastComponent } from './movie/crew-and-cast/crew-and-cast.component';
 import { TrailersComponent } from './movie/trailers/trailers.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { PaginationComponent } from './pagination/pagination.component'; // <-- import the module
 
 
 @NgModule({
@@ -25,13 +27,15 @@ import { TrailersComponent } from './movie/trailers/trailers.component';
     AlsoDirectedByComponent,
     AlsoMightLikeComponent,
     CrewAndCastComponent,
-    TrailersComponent
+    TrailersComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
+    NgxPaginationModule
 
   ],
   providers: [],

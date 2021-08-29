@@ -1,4 +1,4 @@
- import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 
@@ -25,8 +25,8 @@ export class HttpService {
   getGenres(){
     return this.HttpClient.get(`${this.BaseUrl}${this.genresUrl}${this.key}${this.language}`)
   }
-  getAll(subject: string="movie", sort: string='&sort_by=popularity.desc', page: string='1' ){
+  getAll(page: string='1', subject: string="movie", sort: string='&sort_by=popularity.desc'){
     return this.HttpClient
-    .get(`${this.BaseUrl}${this.discover}/${subject}${this.key}${this.language}${this.sort}${this.includeVideo}${this.page}`);
+    .get(`${this.BaseUrl}${this.discover}/${subject}${this.key}${this.language}${this.sort}${this.includeVideo}&page=${page}`);
     };
 }
