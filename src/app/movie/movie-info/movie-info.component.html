@@ -19,14 +19,20 @@
     </div>
     
     <ul class="list-unstyled nav nav-meta font-secondary mb-3 pb-1 flex-nowrap flex-lg-wrap overflow-auto overflow-lg-hidden">
-        <li class="text-white flex-shrink-0 flex-shrink-lg-1">{{data.release_date?.split("-",1)}}</li>
+        <li class="text-white flex-shrink-0 flex-shrink-lg-1">{{releaseDate}}</li>
         <li class="text-white flex-shrink-0 flex-shrink-lg-1">{{data.runtime}} m</li>
-        <li class="text-white flex-shrink-0 flex-shrink-lg-1">{{data.status}}</li>
         <li class="text-white flex-shrink-0 flex-shrink-lg-1">
             <a href="#"  *ngFor="let genre of data.genres" class="text-white">{{genre.name}}  </a>
             <span></span>
         </li>
     </ul>
+
+    <ul *ngIf="budget || revenue" class="list-unstyled nav nav-meta font-secondary mb-3 pb-1 flex-nowrap flex-lg-wrap overflow-auto overflow-lg-hidden">
+        <li *ngIf="budget" class="text-white flex-shrink-0 flex-shrink-lg-1">Budget: {{budget}} M</li>
+        <li *ngIf="revenue" class="text-white flex-shrink-0 flex-shrink-lg-1">Revenue {{revenue}} M</li>
+    </ul>
+    
+
     <ul *ngIf="keywords" class="list-unstyled nav nav-meta font-secondary mb-3 pb-1 flex-nowrap flex-lg-wrap overflow-auto overflow-lg-hidden">
         <li  *ngFor="let word of keywords" class="text-white flex-shrink-0 flex-shrink-lg-1">{{word.name}}</li>
     </ul>

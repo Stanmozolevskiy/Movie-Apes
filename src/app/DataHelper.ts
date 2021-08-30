@@ -1,5 +1,3 @@
-
-
 export class DataHelper {
     
     // mappes list of gsenres from one API call to a call that provides the movies
@@ -39,19 +37,42 @@ export class DataHelper {
       return crewArray.filter((x:any)=> x.job == "Director")[0];
     } 
 
-    public static AlsoDirected(arr:any){
-      let returnArray = arr.filter((x:any)=> x.job == "Director").sort((x:any, y:any)=> x.vote_count - y.vote_count);
+    public static AlsoDirected(arr:any, sourceId: any){
+      let returnArray = arr.filter((x:any)=> x.job == "Director" && x.id != sourceId).sort((x:any, y:any)=> x.vote_count - y.vote_count);
       
       if(returnArray < 2)
       return returnArray;
       
       return returnArray.slice(( returnArray.length -2) , returnArray.length);
     }
-    public static MostPopular(peopleArray:any){
+    public static MostPopularPeople(peopleArray:any){
      return peopleArray.filter((value:any, i:any, self:any)=> self.indexOf(value) === i)
                         .sort((x:any, y:any)=> x.popularity - y.popularity)
                         .splice(peopleArray.length - 6, peopleArray.length)
                         .sort((x:any, y:any)=> y.popularity - x.popularity);
     }
+    public static MostPopularRecomendations(recomendationsArray: any, sourceId: any){
+      return recomendationsArray.filter((i:any)=> i.id != sourceId).sort((x:any, y:any)=> y.popularity - x.popularity).splice(0, 6);
+    }
+
+    public static FormatNumber(number: string){
+      if(!number) return null;
+      
+      let returnNumber = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD',  currencyDisplay: 'narrowSymbol' })
+      .format(parseInt(number));
+
+      if (returnNumber.length >= 12) return returnNumber.slice(0, returnNumber.length -11);
+      
+      return returnNumber.slice(0, returnNumber.length -3)
+    }
+
+    public static FormatDate(date: string){
+     if(!date) return null;
+  
+      return new Intl.DateTimeFormat('en-US', {month: "short", day: "numeric", year: "numeric" } )
+              .format(new Date(date));
+    }
+
+
 }
      

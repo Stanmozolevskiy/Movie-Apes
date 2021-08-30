@@ -32,9 +32,11 @@ export class MoviesComponent implements OnInit {
 
   // mappes list of gsenres from one API call to a call that provides the movies
   // and returns an array with genres 
-  mapGenres(movieObject: any, genresArray: any):[]{
+  mapGenres(movieObject: any, genresArray: any){
+    if(movieObject && genresArray){
       return movieObject.map((genreFromMovie:any)=> 
               genresArray.filter((allGenres:any) => genreFromMovie == allGenres.id))
                         .map((gerne: any) => gerne[0].name).slice(0,2); 
+    }
   }
 }

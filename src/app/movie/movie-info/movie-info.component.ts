@@ -1,3 +1,4 @@
+import { DataHelper } from './../../DataHelper';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -10,9 +11,14 @@ export class MovieInfoComponent implements OnInit {
   @Input() mainCast:any;
   @Input() genres:any;
   @Input() keywords:any;
+  @Input() budget:any;
+  @Input() revenue:any;
+  @Input() releaseDate:any;
+  
   constructor() { }
 
   ngOnInit(): void {
   }
+  
 
 }

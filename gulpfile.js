@@ -92,7 +92,7 @@ function browserSyncReload(done) {
 //
 
 function watch() {
-  gulp.watch('./assets/scss/**/*.scss', scss);
+  gulp.watch('./src/assets/scss/**/*.scss', scss);
   gulp.watch(
     [
       './html/**/*.html',
@@ -118,7 +118,7 @@ gulp.task('default', gulp.parallel(scss));
 function minCSS() {
   return gulp
     .src([
-      './assets/css/theme.css',
+      './src/assets/css/theme.css',
     ])
     .pipe(cleanCSS({compatibility: 'ie11'}))
     .pipe(rename({suffix: '.min'}))
@@ -134,29 +134,29 @@ function minCSS() {
 function minJS() {
   return gulp
     .src([
-      './assets/js/hs.core.js',
-      './assets/js/hs.chartjs.js',
-      './assets/js/hs.circles.js',
-      './assets/js/hs.clipboard.js',
-      './assets/js/hs.countdown.js',
-      './assets/js/hs.cubeportfolio.js',
-      './assets/js/hs.datatables.js',
-      './assets/js/hs.dropzone.js',
-      './assets/js/hs.fancybox.js',
-      './assets/js/hs.flatpickr.js',
-      './assets/js/hs.ion-range-slider.js',
-      './assets/js/hs.leaflet.js',
-      './assets/js/hs.pwstrength.js',
-      './assets/js/hs.selectpicker.js',
-      './assets/js/hs.slick-carousel.js',
-      './assets/js/hs.summernote-editor.js',
-      './assets/js/hs.tagify.js',
-      './assets/js/hs.validation.js',
-      './assets/js/theme-custom.js',
+      './src/assets/js/hs.core.js',
+      './src/assets/js/hs.chartjs.js',
+      './src/assets/js/hs.circles.js',
+      './src/assets/js/hs.clipboard.js',
+      './src/assets/js/hs.countdown.js',
+      './src/assets/js/hs.cubeportfolio.js',
+      './src/assets/js/hs.datatables.js',
+      './src/assets/js/hs.dropzone.js',
+      './src/assets/js/hs.fancybox.js',
+      './src/assets/js/hs.flatpickr.js',
+      './src/assets/js/hs.ion-range-slider.js',
+      './src/assets/js/hs.leaflet.js',
+      './src/assets/js/hs.pwstrength.js',
+      './src/assets/js/hs.selectpicker.js',
+      './src/assets/js/hs.slick-carousel.js',
+      './src/assets/js/hs.summernote-editor.js',
+      './src/assets/js/hs.tagify.js',
+      './src/assets/js/hs.validation.js',
+      './src/assets/js/theme-custom.js',
     ])
     .pipe(concat('theme.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('./dist/assets/js/'));
+    .pipe(gulp.dest('./src/dist/assets/js/'));
 }
 
 
