@@ -54,6 +54,8 @@ export class SingleMovieComponent implements OnInit {
     //call for "Director Bio" only going to show up if ther is a director
     this.servise.get("person", director.id ).subscribe((responce:any)=>{
       this.directorBio = responce;
+      console.log(responce)
+
         })
     //call for "Also directed by" only going to show up if ther is a director
     this.servise.get("person",  director.id +"/movie_credits").subscribe((responce:any)=>{
@@ -83,14 +85,5 @@ export class SingleMovieComponent implements OnInit {
   mapJob(data:any, job:string) {
     return data.filter((x:any)=>x.job == job);
   };
-
-  formatReview(text:any){
-    if(text){
-    let arr = text.content.split(" ");
-    if(arr.length >= 100) return arr.slice(0,100).join(" ")
-      
-    return text.content;
-    }  
-  }
 
 }

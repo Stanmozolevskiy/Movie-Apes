@@ -2,16 +2,20 @@
     
 <div class="mb-6 mb-lg-8" *ngIf="director && data.length >= 2">
     <div class="font-size-26 text-gray-5500 mb-3 pb-1">Also Directed by {{director.name}} </div>
-    here will be director's picture and little bio
+    
+    
+    
+    <br>
     <div class="row no-gutters dark">
         <div class="col-md-6" *ngFor="let movie of data">
             <div class="product mb-5 mb-md-0">
                 <div class="row no-gutters">
                     <div class="col-md-3 col-lg-2">
                         <div class="product-image mb-2 mb-md-0">
-                            <a routerLink="/movie/{{movie.id}}" class="d-inline-block position-relative stretched-link"><img class="img-fluid"  src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="Image Description"></a>
+                            <a routerLink="/movie/{{movie.id}}" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" ></a>
                         </div>
                     </div>
+                  
                     <div class="col-md" >
                         <div class=" px-md-4d d-flex justify-content-between d-md-block">
                             <div>

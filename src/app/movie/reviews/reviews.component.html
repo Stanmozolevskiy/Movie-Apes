@@ -1,0 +1,38 @@
+<div class="border-bottom border-gray-5600 mb-4 pb-4" *ngFor="let review of reviews">
+    <div class="d-flex mb-3 pb-1" >
+        <div>
+            <img class="img-fluid rounded-circle" src="https://image.tmdb.org/t/p/w45/{{review.author_details.avatar_path}}" alt="Image-Description">
+        </div>
+        <div class="ml-3">
+            <div class="mb-2">
+                <span class="text-gray-1300 ml-1">Written by <span class="text-gray-5500 mb-3 pb-1">{{review.author}}</span></span>
+                <span class="text-gray-1300 ml-1">on {{formatDate(review.created_at)}}</span>
+            </div>
+            <div class="form-group d-flex align-items-center justify-content-between font-size-15 text-gray-1300 text-lh-lg text-body mb-0">
+                <span class="d-block text-gray-1300">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+    <p class="mb-3 text-gray-5500"> {{formatReview(review)}}
+       </p>
+        <div class="text-gray-1300">See original
+            <a href="{{review.url}}"> review </a>.
+        </div>
+    <div class="text-gray-1300">
+        <a href="#" class="text-gray-1300">
+            <i class="far fa-thumbs-up font-size-18"></i>
+        </a>
+        <span class="font-size-12 font-weight-semi-bold ml-1">{{review.author_details.rating}}+</span>
+    </div>
+</div>
