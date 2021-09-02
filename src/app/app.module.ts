@@ -15,7 +15,7 @@ import { CrewAndCastComponent } from './movie/crew-and-cast/crew-and-cast.compon
 import { TrailersComponent } from './movie/trailers/trailers.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { MovieInfoComponent } from './movie/movie-info/movie-info.component';
-import { ReviewsComponent } from './movie/reviews/reviews.component'
+import { ReviewsComponent } from './reviews/reviews.component'
 
 
 @NgModule({
