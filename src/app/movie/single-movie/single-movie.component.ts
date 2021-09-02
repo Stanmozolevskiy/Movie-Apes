@@ -1,4 +1,3 @@
-import { ResultTemplateContext } from './../../../../dist/assets/vendor/@ng-bootstrap/ng-bootstrap/typeahead/typeahead-window.d';
 import { DataHelper } from './../../DataHelper';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from '../../http.service';
