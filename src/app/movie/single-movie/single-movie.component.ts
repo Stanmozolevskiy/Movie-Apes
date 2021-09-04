@@ -33,51 +33,30 @@ export class SingleMovieComponent implements OnInit {
     // calling api with specific id to get the movie data
     this.servise.get('movie', id.params.id).subscribe((response: any) => {
         this.data = response; 
+        this.reviews = response.reviews.results;
+        this.keywords = response.keywords.keywords.slice(0,4);
+        this.trailers = response.videos.results;
+        this.review = response.reviews.results;
+        this.crew = DataHelper.MostPopularPeople(response.credits.crew);
+        this.cast = DataHelper.MostPopularPeople(response.credits.cast);
         this.budget = DataHelper.FormatNumber(response.budget); 
         this.revenue = DataHelper.FormatNumber(response.revenue); 
-        this.releaseDate = DataHelper.FormatDate(response.release_date); 
-        });
-    //call for the "You migh also like"
-    this.servise.get("movie", id.params.id+"/similar").subscribe((res: any)=>{
-       this.similarMovies = DataHelper.MostPopularRecomendations(res.results ,id.params.id);
-      })
-      //call for the "Crew and Cast"
-      this.servise.get("movie", id.params.id+"/credits").subscribe((res: any)=>{
-        this.mainCast = DataHelper.MapJob(res.crew);
-        this.crew = DataHelper.MostPopularPeople(res.crew)
-        this.cast = DataHelper.MostPopularPeople(res.cast);
+        this.mainCast = DataHelper.MapJob(response.credits.crew);
+        this.releaseDate = DataHelper.FormatDate(response.release_date);
+        this.similarMovies = DataHelper.MostPopularRecomendations(response.similar.results ,id.params.id);
         
-        let director:any = DataHelper.FindDirector(res.crew);
-        this.director = director;
+          let director:any = DataHelper.FindDirector(response.credits.crew);
+          this.director = director;
 
     //call for "Director Bio" only going to show up if ther is a director
     this.servise.get("person", director.id ).subscribe((responce:any)=>{
-      this.directorBio = responce;
-      console.log(responce)
+      this.directorBio = responce;})
 
-        })
     //call for "Also directed by" only going to show up if ther is a director
     this.servise.get("person",  director.id +"/movie_credits").subscribe((responce:any)=>{
       this.alsoDirector = DataHelper.AlsoDirected(responce.crew, id.params.id);
           })
-        })
-    //call for "Reviews" only going to show up if ther is a director
-    this.servise.get("movie",  id.params.id +"/reviews").subscribe((responce:any)=>{
-      this.review = responce.results;
-        })
-
-    //call for "Trailers" only going to show up if ther is a director
-    this.servise.get("movie",  id.params.id +"/videos").subscribe((responce:any)=>{
-      this.trailers = responce.results;
-        })
-    //call for "Keywords"
-    this.servise.get("movie",  id.params.id +"/keywords").subscribe((responce:any)=>{
-      this.keywords = responce.keywords.slice(0,4);
-        })
-    //call for "Reviews"
-    this.servise.get("movie",  id.params.id +"/reviews").subscribe((responce:any)=>{
-      this.reviews = responce.results;
-        })
+        });
     });
   }
 

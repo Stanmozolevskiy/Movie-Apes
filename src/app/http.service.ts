@@ -19,8 +19,8 @@ export class HttpService {
 
   constructor(private HttpClient: HttpClient) { }
 
-  get(subject: string, id: string){
-    return this.HttpClient.get(`${this.BaseUrl}/${subject}/${id}${this.key}`);
+  get(subject: string, id: string, apprend: string = "&append_to_response=videos,credits,reviews,keywords,similar"){
+    return this.HttpClient.get(`${this.BaseUrl}/${subject}/${id}${this.key}${apprend}`);
   };
   getGenres(){
     return this.HttpClient.get(`${this.BaseUrl}${this.genresUrl}${this.key}${this.language}`)
