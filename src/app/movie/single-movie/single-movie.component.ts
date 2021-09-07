@@ -47,6 +47,8 @@ export class SingleMovieComponent implements OnInit {
         
           let director:any = DataHelper.FindDirector(response.credits.crew);
           this.director = director;
+          
+      console.log(response.videos.results)
 
     //call for "Director Bio" only going to show up if ther is a director
     this.servise.get("person", director.id ).subscribe((responce:any)=>{

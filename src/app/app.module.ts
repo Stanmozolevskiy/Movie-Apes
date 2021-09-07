@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {YouTubePlayerModule} from '@angular/youtube-player';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SingleMovieComponent } from './movie/single-movie/single-movie.component';
@@ -15,7 +15,7 @@ import { CrewAndCastComponent } from './movie/crew-and-cast/crew-and-cast.compon
 import { TrailersComponent } from './movie/trailers/trailers.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { MovieInfoComponent } from './movie/movie-info/movie-info.component';
-import { ReviewsComponent } from './reviews/reviews.component'
+import { ReviewsComponent } from './reviews/reviews.component';
 
 
 @NgModule({
@@ -37,7 +37,7 @@ import { ReviewsComponent } from './reviews/reviews.component'
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
-    NgxPaginationModule
+    NgxPaginationModule,YouTubePlayerModule
 
   ],
   providers: [],
