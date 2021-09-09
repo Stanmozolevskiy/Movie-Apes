@@ -29,4 +29,8 @@ export class HttpService {
     return this.HttpClient
     .get(`${this.BaseUrl}${this.discover}/${subject}${this.key}${this.language}${this.sort}${this.includeVideo}&page=${page}`);
     };
+  getPopular(subject: string, page="1" ){
+    return this.HttpClient
+    .get(`${this.BaseUrl}${subject}/popular${this.key}&page=${page}`)
+  }
 }

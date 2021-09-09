@@ -1,4 +1,3 @@
-import { DataHelper } from './../../DataHelper';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({

@@ -10,6 +10,7 @@ export class MoviesComponent implements OnInit {
   data:any = "";
   genres: any = "";
   totalPages:any = "";
+  popular!:any;
   page!: number;
 
    
@@ -19,6 +20,9 @@ export class MoviesComponent implements OnInit {
     this.handlePageChange(1);
     this.servise.getGenres().subscribe( (res:any)=> {
       this.genres = res.genres;
+    });
+    this.servise.getPopular("movie").subscribe( (res:any)=> {
+     this.popular = res.results.slice(0,5);
     });
   }
 

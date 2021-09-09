@@ -72,6 +72,11 @@ export class DataHelper {
       return new Intl.DateTimeFormat('en-US', {month: "short", day: "numeric", year: "numeric" } )
               .format(new Date(date));
     }
+    
+    public static FindMainTrailers(data: any){
+    let sortedArray = data.sort((x:any, y:any)=> (x.type < y.type)? 1 :((y.type < x.type) ? -1 : 0 ));
+    return sortedArray.length <= 4 ?  sortedArray : sortedArray.splice(0, 4)
+    }
 
 
 }

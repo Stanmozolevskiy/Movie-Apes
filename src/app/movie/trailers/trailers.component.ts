@@ -46,4 +46,11 @@ export class TrailersComponent implements OnInit {
     }
   }
 
+  formatDate(date: string){
+    if(!date) return "";
+ 
+     return new Intl.DateTimeFormat('en-US', {month: "short", day: "numeric", year: "numeric" } )
+             .format(new Date(date));
+   }
+
 }

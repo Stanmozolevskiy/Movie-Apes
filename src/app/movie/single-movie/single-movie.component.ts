@@ -35,7 +35,7 @@ export class SingleMovieComponent implements OnInit {
         this.data = response; 
         this.reviews = response.reviews.results;
         this.keywords = response.keywords.keywords.slice(0,4);
-        this.trailers = response.videos.results;
+        this.trailers = DataHelper.FindMainTrailers(response.videos.results)
         this.review = response.reviews.results;
         this.crew = DataHelper.MostPopularPeople(response.credits.crew);
         this.cast = DataHelper.MostPopularPeople(response.credits.cast);
@@ -47,8 +47,6 @@ export class SingleMovieComponent implements OnInit {
         
           let director:any = DataHelper.FindDirector(response.credits.crew);
           this.director = director;
-          
-      console.log(response.videos.results)
 
     //call for "Director Bio" only going to show up if ther is a director
     this.servise.get("person", director.id ).subscribe((responce:any)=>{
@@ -61,9 +59,4 @@ export class SingleMovieComponent implements OnInit {
         });
     });
   }
-
-  mapJob(data:any, job:string) {
-    return data.filter((x:any)=>x.job == job);
-  };
-
 }
