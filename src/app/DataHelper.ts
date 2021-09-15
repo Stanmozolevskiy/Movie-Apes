@@ -54,6 +54,10 @@ export class DataHelper {
     public static MostPopularRecomendations(recomendationsArray: any, sourceId: any){
       return recomendationsArray.filter((i:any)=> i.id != sourceId).sort((x:any, y:any)=> y.popularity - x.popularity).splice(0, 6);
     }
+    public static MostPopularNowPlaying(dataArray: any){
+      var mostPopular = dataArray.sort((x:any, y:any)=> y.vote_count - x.vote_count).slice(0,5)
+      return mostPopular.sort((x:any, y:any)=>  (y.release_date > x.release_date)? 1 : (( x.release_date >  y.release_date)? -1:0 ));
+    }
 
     public static FormatNumber(number: string){
       if(!number) return null;
@@ -74,8 +78,8 @@ export class DataHelper {
     }
     
     public static FindMainTrailers(data: any){
-    let sortedArray = data.sort((x:any, y:any)=> (x.type < y.type)? 1 :((y.type < x.type) ? -1 : 0 ));
-    return sortedArray.length <= 4 ?  sortedArray : sortedArray.splice(0, 4)
+      let sortedArray = data.sort((x:any, y:any)=> (x.type < y.type)? 1 :((y.type < x.type) ? -1 : 0 ));
+        return sortedArray.length <= 4 ?  sortedArray : sortedArray.splice(0, 4)
     }
 
 

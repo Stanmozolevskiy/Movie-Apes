@@ -17,6 +17,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { MovieInfoComponent } from './movie/movie-info/movie-info.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { TopFiveListComponent } from './top-five-list/top-five-list.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { TopFiveListComponent } from './top-five-list/top-five-list.component';
     MovieInfoComponent,
     ReviewsComponent,
     TopFiveListComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
