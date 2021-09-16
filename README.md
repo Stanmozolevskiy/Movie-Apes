@@ -3,6 +3,13 @@
 Demo 
 https://stanmozolevskiy.github.io/Movie-Apes/
 
+to deploy run:
+
+ng build --prod --baseHref=”https://stanmozolevskiy.github.io/Movie-Apes/”
+
+ng deploy --base-href=/Movie-Apes/
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
 
 ## Development server
