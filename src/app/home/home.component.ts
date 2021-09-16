@@ -1,7 +1,7 @@
 import { DataHelper } from './../DataHelper';
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from './../http.service';
-import { SlicePipe } from '@angular/common';
+
 
 @Component({
   selector: 'home',
@@ -9,17 +9,22 @@ import { SlicePipe } from '@angular/common';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  headerMovie!:any;
-  headerMovies: any;
+  headerMovie:any = "";
+  headerMovies: any = "";
+  headerMovieTitle: any = "";
 
   constructor(private servise: HttpService) { }
 
   ngOnInit(): void {
     this.servise.getPopular("movie").subscribe( (res:any)=> {
-      this.headerMovie = DataHelper.MostPopularNowPlaying(res.results)[4];
-      this.headerMovies = DataHelper.MostPopularNowPlaying(res.results).slice(0,4);
+      this.headerMovies = DataHelper.MostPopularNowPlaying(res.results).slice(0,4); 
+      let headerMovie = DataHelper.MostPopularNowPlaying(res.results)[4];
+      this.headerMovie = headerMovie
 
-      console.log(DataHelper.MostPopularNowPlaying(res.results).slice(0,4))
+      this.servise.get("movie", headerMovie.id).subscribe( (res:any)=> {
+      this.headerMovieTitle = res.title + ": " + res.tagline;
+       });
+
      });
   }
 

@@ -10,10 +10,10 @@
                     <div class="pt-6">
                        
                         <h6 class="display-9 text-lh-1dot3 max-w-500 mb-1">
-                            <a href="#" class="text-white">One Big Question Monster 3 Needs To Answer</a>
+                            <a routerLink="/movie/{{headerMovie.id}}" class="text-white">{{headerMovieTitle}}</a>
                         </h6>
                         <div class="ml-n3">
-                            <a href="javascript:;" class="js-fancybox d-flex text-white align-items-center" data-hs-fancybox-options='{
+                            <a routerLink="/movie/{{headerMovie.id}}" class="js-fancybox d-flex text-white align-items-center" data-hs-fancybox-options='{
                                     "src": "//youtube.com/0qisGSwZym4",
                                     "speed": 700
                                 }'>
@@ -27,29 +27,7 @@
         </div>
         <!--End Hero Img -->
         <!-- Blog Post -->
-        <section class="blog-post mb-7 mb-xl-11">
-            <div class="container px-md-5">
-                <div class="mx-md-1">
-                    <div class="row mb-5 mt-n7">
-                        <div class="col-md-6 col-lg-3" *ngFor="let movie of headerMovies">
-                            <div class="mb-5 mb-lg-0">
-                                <a class="d-block mb-3" href="../blog/blog-single.html">
-                                    <img class="img-fluid h-185rem" src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="Image-Description">
-                                </a>
-                                <div class="text-center">
-                                    <a class="font-size-13 font-weight-bold" href="../blog/blog-single.html">{{movie.original_title}}</a>
-                                    <h6 class="product_title font-size-15 font-weight-semi-bold font-secondary text-lh-lg mb-1">
-                                        <a href="../blog/blog-single.html">Emmy 2020: “Game of Throne” featured having 22 nominee</a>
-                                    </h6>
-                                    <a class="h-g-primary font-size-13 font-weight-normal font-italic" href="../blog/blog-single.html">January 30, 2020</a>
-                                </div>
-                            </div>
-                        </div>
-                       
-                    </div>
-                </div>
-            </div>
-        </section>
+      <blog-post [data]="headerMovies"></blog-post>
         <!-- End Blog Post -->
 
         <!-- Blog Post Tab with Sidebar -->

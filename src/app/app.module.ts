@@ -18,6 +18,8 @@ import { MovieInfoComponent } from './movie/movie-info/movie-info.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { TopFiveListComponent } from './top-five-list/top-five-list.component';
 import { HomeComponent } from './home/home.component';
+import { BlogPostComponent } from './home/blog-post/blog-post.component';
+import { DescriptionComponent } from './home/blog-post/description/description.component';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { HomeComponent } from './home/home.component';
     ReviewsComponent,
     TopFiveListComponent,
     HomeComponent,
+    BlogPostComponent,
+    DescriptionComponent,
   ],
   imports: [
     BrowserModule,
