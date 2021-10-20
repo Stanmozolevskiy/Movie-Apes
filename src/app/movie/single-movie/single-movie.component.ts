@@ -33,7 +33,7 @@ export class SingleMovieComponent implements OnInit {
     // calling api with specific id to get the movie data
     this.servise.get('movie', id.params.id).subscribe((response: any) => {
         this.data = response; 
-        console.log(response.release_date)
+        console.log(response)
         this.reviews = response.reviews.results;
         this.keywords = response.keywords.keywords.slice(0,4);
         this.trailers = DataHelper.FindMainTrailers(response.videos.results)

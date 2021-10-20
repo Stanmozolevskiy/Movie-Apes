@@ -1,0 +1,30 @@
+
+    <div class="product mb-4 mb-lg-0">
+        <div class="product-image mb-2 pb-1">
+            <a (click)="triggerModal(modalData)" class="d-inline-block position-relative stretched-link">
+                <img class="img-fluid" src="https://img.youtube.com/vi/{{trailer.key}}/mqdefault.jpg" alt="Image Description">
+            </a>
+           
+        </div>
+        <h6 class="product-title font-size-1 font-weight-bold mb-0">
+            <a routerLink="/movie/{{data}}">{{trailer.name}}</a>
+        </h6>
+        <div>
+            <span class="font-size-12 text-gray-1300">{{trailer.size}} {{trailer.type}}</span>
+            <span class="product-comment font-size-12 text-gray-1300">{{date}}</span>
+        </div>
+          <!-- MODAL BEGIN-->
+          <ng-template #modalData style=" position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgb(0, 0, 0, 0.8);">
+            <div style=" 
+            position: absolute;
+            top: 50%;
+            bottom: auto;
+            left: 50%;
+            right: auto;
+            margin-right: -50%;
+            transform: translate(-50%, 10%)">
+              <youtube-player videoId="{{trailer.key}}" [width]="960" [height]="540" [playerVars]="playerVars"></youtube-player>
+            </div>
+            </ng-template>
+            <!-- MODAL END-->
+    </div>

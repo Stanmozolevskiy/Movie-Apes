@@ -20,7 +20,7 @@ import { TopFiveListComponent } from './top-five-list/top-five-list.component';
 import { HomeComponent } from './home/home.component';
 import { BlogPostComponent } from './home/blog-post/blog-post.component';
 import { DescriptionComponent } from './home/blog-post/description/description.component';
-
+import { HomeTrailersComponent } from './home/home-trailers/home-trailers.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +39,7 @@ import { DescriptionComponent } from './home/blog-post/description/description.c
     HomeComponent,
     BlogPostComponent,
     DescriptionComponent,
+    HomeTrailersComponent,
   ],
   imports: [
     BrowserModule,
