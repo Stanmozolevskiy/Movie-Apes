@@ -1,3 +1,6 @@
+import { Movie } from './models/Movie';
+import { Crew } from "./models/Crew";
+
 export class DataHelper {
     
     // mappes list of gsenres from one API call to a call that provides the movies
@@ -9,27 +12,24 @@ export class DataHelper {
     
      }
 
-    public static MapJob(JobArray:any) {
+    public static MapJob(JobArray:Crew[]) {
       if(JobArray.length <= 3 ) return JobArray;
-
-      let returnArray = [];
-      returnArray.push(JobArray.filter((x:any)=>x.job == "Director")[0]);
+      let returnArray: Crew[] = [];
+      returnArray.push(JobArray.filter((x:Crew)=>x.job == "Director")[0]);
+      let producer = JobArray.filter((x:Crew)=>x.job == "Executive Producer")[0];
+      returnArray.push(producer);
+      if(!producer) returnArray.push(JobArray.filter((x:Crew)=>x.job == "Producer")[0]);
       
-      let producer = returnArray.push(JobArray.filter((x:any)=>x.job == "Executive Producer")[0]);
-      if(!producer) returnArray.push(JobArray.filter((x:any)=>x.job == "Producer")[0]);
-
-      returnArray.push(JobArray.filter((x:any)=>x.job == "Screenplay")[0]);
-      returnArray.push(JobArray.filter((x:any)=>x.job == "Animation")[0]);
-      returnArray.push(JobArray.filter((x:any)=>x.job == "Writer")[0]);
-      returnArray.push(JobArray.filter((x:any)=>x.job == "Art Direction")[0]);
-      returnArray.push(JobArray.filter((x:any)=>x.job == "Special Effects")[0]);
-      returnArray.push(JobArray.filter((x:any)=>x.job == "Visual Effects")[0]);
-      returnArray.push(JobArray.filter((x:any)=>x.job == "Music Arranger")[0]);
-      returnArray = returnArray.filter((x:any)=> x != undefined);
+      returnArray.push(JobArray.filter((x:Crew)=>x.job == "Screenplay")[0]);
+      returnArray.push(JobArray.filter((x:Crew)=>x.job == "Animation")[0]);
+      returnArray.push(JobArray.filter((x:Crew)=>x.job == "Writer")[0]);
+      returnArray.push(JobArray.filter((x:Crew)=>x.job == "Art Direction")[0]);
+      returnArray.push(JobArray.filter((x:Crew)=>x.job == "Special Effects")[0]);
+      returnArray.push(JobArray.filter((x:Crew)=>x.job == "Visual Effects")[0]);
+      returnArray.push(JobArray.filter((x:Crew)=>x.job == "Music Arranger")[0]);
+      returnArray = returnArray.filter((x:Crew)=> x != undefined);
       
       if(JobArray.length > 3 )return returnArray.slice(0,3);
-      
-      returnArray.push(JobArray.slice(0,));
       return returnArray.slice(0,3);
     };
 
@@ -51,7 +51,7 @@ export class DataHelper {
                         .splice(peopleArray.length - 6, peopleArray.length)
                         .sort((x:any, y:any)=> y.popularity - x.popularity);
     }
-    public static MostPopularRecomendations(recomendationsArray: any, sourceId: any){
+    public static MostPopularRecomendations(recomendationsArray:Movie[], sourceId: number){
       return recomendationsArray.filter((i:any)=> i.id != sourceId).sort((x:any, y:any)=> y.popularity - x.popularity).splice(0, 6);
     }
     public static MostPopularNowPlaying(dataArray: any){
@@ -60,7 +60,7 @@ export class DataHelper {
     }
 
     public static FormatNumber(number: string){
-      if(!number) return null;
+      if(!number) return number;
       
       let returnNumber = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD',  currencyDisplay: 'narrowSymbol' })
       .format(parseInt(number));
@@ -71,7 +71,7 @@ export class DataHelper {
     }
 
     public static FormatDate(date: string){
-     if(!date) return null;
+     if(!date) return date;
   
       return new Intl.DateTimeFormat('en-US', {month: "short", day: "numeric", year: "numeric" } )
               .format(new Date(date));

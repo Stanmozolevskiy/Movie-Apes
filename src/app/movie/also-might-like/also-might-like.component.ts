@@ -1,4 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
+import { Movie } from 'src/app/models/Movie';
 
 @Component({
   selector: 'also-might-like',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input} from '@angular/core';
   styleUrls: ['./also-might-like.component.css']
 })
 export class AlsoMightLikeComponent implements OnInit {
-  @Input() data:any;
+  @Input() data!:Movie[];
 
   constructor() { }
 

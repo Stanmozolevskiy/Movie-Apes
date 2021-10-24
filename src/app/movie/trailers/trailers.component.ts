@@ -1,5 +1,6 @@
 import {Component, OnInit, Input, ViewChild } from '@angular/core';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { Videos } from 'src/app/models/Videos';
 
 @Component({
   selector: 'trailers',
@@ -7,13 +8,13 @@ import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./trailers.component.css']
 })
 export class TrailersComponent implements OnInit {
-  @Input() data:any;
+  @Input() data!:Videos[];
   apiLoaded = false;
   closeModal!: string;
 
-   playerVars: any = {
+  playerVars: any = {
       'autoplay': 1,
-    }
+  }
 
   constructor(private modalService: NgbModal) { }
     

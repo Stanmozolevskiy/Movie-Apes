@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Reviews } from '../models/Reviews';
 
 @Component({
   selector: 'reviews',
@@ -6,19 +7,20 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./reviews.component.css']
 })
 export class ReviewsComponent implements OnInit {
-  @Input() reviews:any;
+  @Input() reviews!:Reviews[];
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  formatReview(reviewObject:any){
+  formatReview(reviewObject:Reviews){
     if(reviewObject){
     let arr = reviewObject.content.split(" ");
     if(arr.length >= 100) return arr.slice(0,100).join(" ") + " ..." 
       
     return reviewObject.content;
-    }  
+    };
+    return null; 
   }
 
  formatDate(date: string){

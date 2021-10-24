@@ -1,7 +1,15 @@
+import { AlsoDirected } from './../../models/AlsoDirected';
+import { Cast } from './../../models/Cast';
+import { KeyWords } from './../../models/KeyWords';
+import { Movie } from './../../models/Movie';
 import { DataHelper } from './../../DataHelper';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from '../../http.service';
 import { Component, OnInit, Output } from '@angular/core';
+import { Reviews } from 'src/app/models/Reviews';
+import { Videos } from 'src/app/models/Videos';
+import { Crew } from 'src/app/models/Crew';
+import { Person } from 'src/app/models/Person';
 
 @Component({
   selector: 'single-movie',
@@ -9,21 +17,20 @@ import { Component, OnInit, Output } from '@angular/core';
   styleUrls: ['./single-movie.component.css']
 })
 export class SingleMovieComponent implements OnInit { 
-  data:any = "";
-  similarMovies:any = "";
-  crew:any = "";
-  cast:any = "";
-  mainCast:any = "";
-  director:any = "";
-  alsoDirector:any = "";
-  review:any ="";
-  directorBio:any = "";
-  trailers:any = "";
-  keywords:any = "";
-  budget:any="";
-  revenue:any="";
-  releaseDate:any="";
-  reviews:any="";
+  data!:Movie;
+  similarMovies!:Movie[];
+  crew!:Crew[];
+  cast!:Cast[];
+  mainCast!:Crew[];
+  director!:Crew;
+  alsoDirector!:Movie[];
+  directorBio!:Person;
+  trailers!:Videos[];
+  keywords!:KeyWords[];
+  budget!:string;
+  revenue!:string;
+  releaseDate!:string;
+  reviews!:Reviews[];
 
   constructor(private servise: HttpService, private route: ActivatedRoute){}
 
@@ -31,33 +38,31 @@ export class SingleMovieComponent implements OnInit {
     // getting id for a specific movie from router params
     this.route.paramMap.subscribe((id:any)=> {
     // calling api with specific id to get the movie data
-    this.servise.get('movie', id.params.id).subscribe((response: any) => {
+    this.servise.get('movie', id.params.id).subscribe((response: Movie) => {
         this.data = response; 
-        console.log(response)
         this.reviews = response.reviews.results;
         this.keywords = response.keywords.keywords.slice(0,4);
         this.trailers = DataHelper.FindMainTrailers(response.videos.results)
-        this.review = response.reviews.results;
         this.crew = DataHelper.MostPopularPeople(response.credits.crew);
         this.cast = DataHelper.MostPopularPeople(response.credits.cast);
-        this.budget = DataHelper.FormatNumber(response.budget); 
-        this.revenue = DataHelper.FormatNumber(response.revenue); 
+        this.budget = DataHelper.FormatNumber(response.budget.toString()); 
+        this.revenue = DataHelper.FormatNumber(response.revenue.toString()); 
         this.mainCast = DataHelper.MapJob(response.credits.crew);
         this.releaseDate = DataHelper.FormatDate(response.release_date);
         this.similarMovies = DataHelper.MostPopularRecomendations(response.similar.results ,id.params.id);
         
-          let director:any = DataHelper.FindDirector(response.credits.crew);
-          this.director = director;
-
-    //call for "Director Bio" only going to show up if ther is a director
-    this.servise.get("person", director.id ).subscribe((responce:any)=>{
-      this.directorBio = responce;})
+        let director:Crew = DataHelper.FindDirector(response.credits.crew);
+        this.director = director;
+        
+        //call for "Director Bio" only going to show up if ther is a director
+        this.servise.getPerson(director.id).subscribe((responce:Person)=>{
+        this.directorBio = responce;})
 
     //call for "Also directed by" only going to show up if ther is a director
-    this.servise.get("person",  director.id +"/movie_credits").subscribe((responce:any)=>{
-      this.alsoDirector = DataHelper.AlsoDirected(responce.crew, id.params.id);
+    this.servise.getAlsoDirected(director.id, "/movie_credits").subscribe((responce:AlsoDirected)=>{
+       this.alsoDirector = DataHelper.AlsoDirected(responce.crew, id.params.id);
           })
-        });
+       });
     });
   }
 }

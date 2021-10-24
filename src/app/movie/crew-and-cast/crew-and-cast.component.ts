@@ -1,3 +1,5 @@
+import { Cast } from './../../models/Cast';
+import { Crew } from './../../models/Crew';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -6,8 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./crew-and-cast.component.css']
 })
 export class CrewAndCastComponent implements OnInit {
-  @Input() crew:any;
-  @Input() cast:any;
+  @Input() crew!:Crew[];
+  @Input() cast!:Cast[];
   constructor() { }
 
   ngOnInit(): void {

@@ -27,7 +27,7 @@
         </li>
     </ul>
 
-    <ul *ngIf="budget || revenue" class="list-unstyled nav nav-meta font-secondary mb-3 pb-1 flex-nowrap flex-lg-wrap overflow-auto overflow-lg-hidden">
+    <ul *ngIf="budget.length < 1  || budget.length < 1" class="list-unstyled nav nav-meta font-secondary mb-3 pb-1 flex-nowrap flex-lg-wrap overflow-auto overflow-lg-hidden">
         <li *ngIf="budget" class="text-white flex-shrink-0 flex-shrink-lg-1">Budget: {{budget}} M</li>
         <li *ngIf="revenue" class="text-white flex-shrink-0 flex-shrink-lg-1">Revenue {{revenue}} M</li>
     </ul>

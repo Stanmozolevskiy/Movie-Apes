@@ -1,4 +1,8 @@
+import { Crew } from './../../models/Crew';
+import { AlsoDirected } from './../../models/AlsoDirected';
 import {  Component, OnInit, Input, } from '@angular/core';
+import { Person } from 'src/app/models/Person';
+import { Movie } from 'src/app/models/Movie';
 
 @Component({
   selector: 'also-directed-by',
@@ -6,9 +10,9 @@ import {  Component, OnInit, Input, } from '@angular/core';
   styleUrls: ['./also-directed-by.component.css']
 })
 export class AlsoDirectedByComponent implements OnInit {
-  @Input() data:any;
-  @Input() director:any;
-  @Input() directorBio:any;
+  @Input() data!:Movie[];
+  @Input() director!:Crew;
+  @Input() directorBio!:Person;
   
   constructor() { }
   ngOnInit(): void {
