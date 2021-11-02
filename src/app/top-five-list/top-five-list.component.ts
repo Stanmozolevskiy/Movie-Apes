@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Movie } from '../models/Movie';
 
 @Component({
   selector: 'top-five-list',
@@ -7,8 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TopFiveListComponent implements OnInit {
 
-  @Input() data: any;
-
+  @Input() data!: Movie[];
   constructor() { }
 
   ngOnInit(): void {

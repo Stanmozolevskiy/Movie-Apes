@@ -1,3 +1,4 @@
+import { GenreResponce } from './models/GenreResponce';
 import { AlsoDirected } from './models/AlsoDirected';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -32,12 +33,12 @@ export class HttpService {
   getAlsoDirected(id: number, apprend: string):Observable<AlsoDirected>{
     return this.HttpClient.get<AlsoDirected>(`${this.BaseUrl}/person/${id}${apprend}${this.key}`);
   };
-  getGenres():Observable<any>{
-    return this.HttpClient.get<any>(`${this.BaseUrl}${this.genresUrl}${this.key}${this.language}`)
+  getGenres():Observable<GenreResponce>{
+    return this.HttpClient.get<GenreResponce>(`${this.BaseUrl}${this.genresUrl}${this.key}${this.language}`)
   };
-  getAll(page:number=1, subject: string="movie", sort: string='&sort_by=popularity.desc'): Observable<any> {
+  getAll(page:number=1, subject: string="movie", sort: string='&sort_by=popularity.desc'): Observable<MovieResponce> {
     return this.HttpClient
-    .get<any>(`${this.BaseUrl}${this.discover}/${subject}${this.key}${this.language}${this.sort}${this.includeVideo}&page=${page}`)
+    .get<MovieResponce>(`${this.BaseUrl}${this.discover}/${subject}${this.key}${this.language}${this.sort}${this.includeVideo}&page=${page}`)
     };
   getPopular(subject: string, page:number=1 ): Observable<MovieResponce>{
     return this.HttpClient.get<MovieResponce>(`${this.BaseUrl}${subject}/popular${this.key}&page=${page}`)

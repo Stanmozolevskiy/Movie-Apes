@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Movie } from 'src/app/models/Movie';
 
 @Component({
   selector: 'blog-post',
@@ -6,9 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./blog-post.component.css']
 })
 export class BlogPostComponent implements OnInit {
-  @Input() data:any;
+  @Input() data!:Movie[];
   constructor() { }
-
+  
   ngOnInit(): void {
   }
 

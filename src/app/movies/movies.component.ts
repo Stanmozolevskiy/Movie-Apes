@@ -21,7 +21,7 @@ export class MoviesComponent implements OnInit {
     
   ngOnInit(): void {
     this.handlePageChange(1);
-    this.servise.getGenres().subscribe((res:any)=> {
+    this.servise.getGenres().subscribe((res:GenreResponce)=> {
       this.genres = res.genres;
     });
     this.servise.getPopular("movie").subscribe((res: MovieResponce)=> {
