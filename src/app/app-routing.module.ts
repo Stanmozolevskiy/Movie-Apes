@@ -1,5 +1,5 @@
 import { HomeComponent } from './home/home.component';
-import { MoviesComponent } from './movies/movies.component';
+import { MoviesComponent } from './movie/movies/movies.component';
 import { SingleMovieComponent } from './movie/single-movie/single-movie.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';

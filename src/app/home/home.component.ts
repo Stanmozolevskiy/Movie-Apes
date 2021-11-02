@@ -1,5 +1,5 @@
 import { MovieResponce } from './../models/MovieResponce';
-import { ReviewsComponent } from './../reviews/reviews.component';
+import { ReviewsComponent } from '../common-components/reviews/reviews.component';
 import { DataHelper } from './../DataHelper';
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from './../http.service';
