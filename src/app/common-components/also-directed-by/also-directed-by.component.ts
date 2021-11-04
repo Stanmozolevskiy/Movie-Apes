@@ -1,8 +1,7 @@
-import { Crew } from './../../models/Crew';
-import { AlsoDirected } from './../../models/AlsoDirected';
 import {  Component, OnInit, Input, } from '@angular/core';
-import { Person } from 'src/app/models/Person';
-import { Movie } from 'src/app/models/Movie';
+import { Crew } from '../../models/Crew';
+import { Person } from '../../models/Person';
+import { Movie } from '../../models/Movie';
 
 @Component({
   selector: 'also-directed-by',

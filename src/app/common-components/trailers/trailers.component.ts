@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, ViewChild } from '@angular/core';
+import {Component, OnInit, Input } from '@angular/core';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { Videos } from 'src/app/models/Videos';
 

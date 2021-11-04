@@ -1,5 +1,5 @@
-import { Cast } from './../../models/Cast';
-import { Crew } from './../../models/Crew';
+import { Cast } from '../../models/Cast';
+import { Crew } from '../../models/Crew';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
