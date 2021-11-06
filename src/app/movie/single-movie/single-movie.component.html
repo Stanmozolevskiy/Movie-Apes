@@ -56,8 +56,16 @@
                                         </div>
                                     </div>
                                 </div>
-   
-                                <trailers [data]="trailers" ></trailers>
+                                
+                                <div class="mb-6" *ngIf="trailers.length > 0">
+                                    <div class="font-size-26 text-gray-5500 mb-3 pb-1">Trailers & Clips</div>
+                                    <div class="row dark mx-n2">
+                                    <trailers class="col-md-6 col-lg-3 px-2" *ngFor="let data of trailers" [data]="data" ></trailers>
+                                    </div>
+                                        
+                                
+                                </div>
+
                                 <also-might-like [data]="similarMovies"></also-might-like>    
                                 
                                 <also-directed-by [director]="director" [data]="alsoDirector" [directorBio]="directorBio" ></also-directed-by>

@@ -1,11 +1,12 @@
+import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+
+import { MovieDataServiceService } from './../movie-data-service.service';
 import { AlsoDirected } from './../../models/AlsoDirected';
 import { Cast } from './../../models/Cast';
 import { KeyWords } from './../../models/KeyWords';
 import { Movie } from './../../models/Movie';
 import { DataHelper } from './../../DataHelper';
-import { ActivatedRoute } from '@angular/router';
-import { HttpService } from '../../http.service';
-import { Component, OnInit, Output } from '@angular/core';
 import { Reviews } from 'src/app/models/Reviews';
 import { Videos } from 'src/app/models/Videos';
 import { Crew } from 'src/app/models/Crew';
@@ -32,13 +33,13 @@ export class SingleMovieComponent implements OnInit {
   releaseDate!:string;
   reviews!:Reviews[];
 
-  constructor(private servise: HttpService, private route: ActivatedRoute){}
+  constructor(private movieDataservice: MovieDataServiceService, private route: ActivatedRoute){}
 
   ngOnInit(): void {
     // getting id for a specific movie from router params
     this.route.paramMap.subscribe((id:any)=> {
     // calling api with specific id to get the movie data
-    this.servise.get('movie', id.params.id).subscribe((response: Movie) => {
+    this.movieDataservice.get('movie', id.params.id).subscribe((response: Movie) => {
         this.data = response; 
         this.reviews = response.reviews.results;
         this.keywords = response.keywords.keywords.slice(0,4);
@@ -55,11 +56,11 @@ export class SingleMovieComponent implements OnInit {
         this.director = director;
         
         //call for "Director Bio" only going to show up if ther is a director
-        this.servise.getPerson(director.id).subscribe((responce:Person)=>{
+        this.movieDataservice.getPerson(director.id).subscribe((responce:Person)=>{
         this.directorBio = responce;})
 
     //call for "Also directed by" only going to show up if ther is a director
-    this.servise.getAlsoDirected(director.id, "/movie_credits").subscribe((responce:AlsoDirected)=>{
+    this.movieDataservice.getAlsoDirected(director.id, "/movie_credits").subscribe((responce:AlsoDirected)=>{
        this.alsoDirector = DataHelper.AlsoDirected(responce.crew, id.params.id);
           })
        });

@@ -1,7 +1,8 @@
+import { Component, OnInit } from '@angular/core';
+
+import { MovieDataServiceService } from './../movie-data-service.service';
 import { MovieResponce } from '../../models/MovieResponce';
 import { GenreResponce } from '../../models/GenreResponce';
-import { HttpService } from '../../http.service';
-import { Component, OnInit } from '@angular/core';
 import {Movie} from '../../models/Movie';
 import { Genres } from '../../models/Genres';
 
@@ -17,20 +18,20 @@ export class MoviesComponent implements OnInit {
   popular!:Movie[];
   page!: number;
 
-  constructor(private servise: HttpService){}
+  constructor(private movieDataservice: MovieDataServiceService){}
     
   ngOnInit(): void {
     this.handlePageChange(1);
-    this.servise.getGenres().subscribe((res:GenreResponce)=> {
+    this.movieDataservice.getGenres().subscribe((res:GenreResponce)=> {
       this.genres = res.genres;
     });
-    this.servise.getPopular("movie").subscribe((res: MovieResponce)=> {
+    this.movieDataservice.getPopular("movie").subscribe((res: MovieResponce)=> {
      this.popular = res.results.slice(0,5);
     });
   }
 
   handlePageChange(event:number = 1 ){
-    this.servise.getAll(event).subscribe((res: MovieResponce) => {
+    this.movieDataservice.getAll(event).subscribe((res: MovieResponce) => {
       this.data = res.results
       this.page = res.page;
       this.totalPages = res.total_pages;

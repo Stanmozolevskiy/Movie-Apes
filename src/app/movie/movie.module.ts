@@ -1,8 +1,4 @@
 import { CommonComponentsModule } from './../common-components/common-components.module';
-import { HomeTrailersComponent } from './../home/home-trailers/home-trailers.component';
-import { DescriptionComponent } from './../home/blog-post/description/description.component';
-import { BlogPostComponent } from './../home/blog-post/blog-post.component';
-import { HomeComponent } from './../home/home.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { SingleMovieComponent } from './single-movie/single-movie.component';
 import { MovieInfoComponent } from './movie-info/movie-info.component';
@@ -18,11 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     MoviesComponent,
     SingleMovieComponent,
-    MovieInfoComponent,
-    HomeComponent,
-    BlogPostComponent,
-    DescriptionComponent,
-    HomeTrailersComponent,
+    MovieInfoComponent
   ],
   imports: [
     CommonModule,

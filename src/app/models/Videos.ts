@@ -12,3 +12,10 @@ export class Videos{
        public type: string,
     ){}
 }
+
+export class VideoResponse{
+    constructor(
+        public id : number,
+        public results : Videos[]
+    ){}
+}

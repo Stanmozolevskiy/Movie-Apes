@@ -2,6 +2,7 @@ import { KeyWords } from './../../models/KeyWords';
 import { Crew } from './../../models/Crew';
 import { Genres } from './../../models/Genres';
 import { Movie } from './../../models/Movie';
+
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({

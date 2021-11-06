@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MovieModule } from './movie/movie.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { MovieModule } from './movie/movie.module';
   imports: [
     AppRoutingModule,
     MovieModule,
-    CommonComponentsModule
+    CommonComponentsModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

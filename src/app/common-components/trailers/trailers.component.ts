@@ -8,9 +8,10 @@ import { Videos } from 'src/app/models/Videos';
   styleUrls: ['./trailers.component.css']
 })
 export class TrailersComponent implements OnInit {
-  @Input() data!:Videos[];
+  @Input() data!:Videos;
   apiLoaded = false;
   closeModal!: string;
+  @Input() textColor: string = "white";
 
   playerVars: any = {
       'autoplay': 1,

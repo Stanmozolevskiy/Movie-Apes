@@ -41,19 +41,18 @@
                             <div class="row mx-n2">
                               
                                 <div *ngIf="mainTrailer" class="col-lg-5 px-2">
-                                <home-trailers [data]="mainTrailer"></home-trailers>
+                                <trailers class="col-md-6 col-lg-3 px-2" [data]="mainTrailer" [textColor]='trailerTextCollor'></trailers>   
                                 </div>
  
-                                <div class="col-lg-7 px-2">
-                                    <div class="row mx-n2 mt-n1" >
-                                        <div class="col-md-6 col-lg-4 px-2" *ngFor="let trailter of entierList.slice(1,7)">
-                                            <home-trailers [data]="trailter.id"></home-trailers>
-                                        </div>
-                                       
+                            <div class="col-lg-7 px-2">
+                                <div class="row mx-n2 mt-n1" >
+                                    <div class="col-md-6 col-lg-4 px-2" *ngFor='let trailer of listTrailers.slice(0,6)'>
+                                        <trailers [data]="trailer" [textColor]='trailerTextCollor'></trailers>   
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                         
                     </div>
                 </div>
@@ -62,10 +61,9 @@
                 <div class="container px-md-4">
                     <div class="row no-gutters">
                             <div class="row mx-n2 mt-n1" >
-                                <div class="col-md-4 col-lg-3 px-2" *ngFor="let trailter of entierList.slice(8,16)">
-                                    <home-trailers [data]="trailter.id"></home-trailers>
+                                <div class="col-md-6 col-lg-4 px-2" *ngFor='let trailer of listTrailers.slice(7,15)'>
+                                    <trailers [data]="trailer" [textColor]='trailerTextCollor'></trailers>   
                                 </div>
-                               
                             </div>
                     </div>
                 </div>
