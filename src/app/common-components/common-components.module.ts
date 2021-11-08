@@ -10,6 +10,9 @@ import { AppRoutingModule } from '../app-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { BigButtonComponent } from './big-button/big-button.component';
+import { BigButtonEmptyComponent } from './big-button-empty/big-button-empty.component';
+import { MainImageComponent } from './main-image/main-image.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { BrowserModule } from '@angular/platform-browser';
     AlsoMightLikeComponent,
     CrewAndCastComponent,
     TrailersComponent,
-    TopFiveListComponent
+    TopFiveListComponent,
+    BigButtonComponent,
+    BigButtonEmptyComponent,
+    MainImageComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +40,10 @@ import { BrowserModule } from '@angular/platform-browser';
     AlsoMightLikeComponent,
     CrewAndCastComponent,
     TrailersComponent,
-    TopFiveListComponent
+    TopFiveListComponent,
+    BigButtonComponent,
+    BigButtonEmptyComponent,
+    MainImageComponent
   ]
 })
 export class CommonComponentsModule { }

@@ -1,3 +1,4 @@
+import { TvShowsModule } from './tv-shows/tv-shows.module';
 import { CommonComponentsModule } from './common-components/common-components.module';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -9,13 +10,15 @@ import { HomeModule } from './home/home.module';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+
   ],
   imports: [
     AppRoutingModule,
     MovieModule,
     CommonComponentsModule,
-    HomeModule
+    HomeModule,
+    TvShowsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

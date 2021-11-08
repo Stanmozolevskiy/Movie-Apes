@@ -22,6 +22,7 @@
     "@angular/youtube-player": "^12.2.4",
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
     "bootstrap": "^4.5.0",
+    "dotenv": "^10.0.0",
     "font-awesome": "^4.7.0",
     "gulp-cli": "^2.3.0",
     "ngx-pagination": "^5.1.1",

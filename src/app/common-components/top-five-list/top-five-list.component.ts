@@ -1,3 +1,4 @@
+import { Tv } from './../../models/Tv';
 import { Component, OnInit, Input } from '@angular/core';
 import { Movie } from '../../models/Movie';
 
@@ -8,7 +9,7 @@ import { Movie } from '../../models/Movie';
 })
 export class TopFiveListComponent implements OnInit {
 
-  @Input() data!: Movie[];
+  @Input() data!: any;
   constructor() { }
 
   ngOnInit(): void {
