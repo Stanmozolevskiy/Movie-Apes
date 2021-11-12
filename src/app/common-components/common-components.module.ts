@@ -13,7 +13,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BigButtonComponent } from './big-button/big-button.component';
 import { BigButtonEmptyComponent } from './big-button-empty/big-button-empty.component';
 import { MainImageComponent } from './main-image/main-image.component';
-import { MovieInfoComponent } from '../movie/movie-info/movie-info.component';
+import { MovieInfoComponent } from './movie-info/movie-info.component'
 import { RentButtonsComponent } from './rent-buttons/rent-buttons.component';
 
 @NgModule({
