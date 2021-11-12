@@ -1,5 +1,5 @@
-import { Tv } from './../../models/Tv';
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Movie } from '../../models/Movie';
 
 @Component({
@@ -9,10 +9,13 @@ import { Movie } from '../../models/Movie';
 })
 export class TopFiveListComponent implements OnInit {
 
-  @Input() data!: any;
-  constructor() { }
+  @Input() data!: Movie[];
+  url!:string;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.url =  this.router.routerState.snapshot.url.split("/")[1];
   }
 
 }

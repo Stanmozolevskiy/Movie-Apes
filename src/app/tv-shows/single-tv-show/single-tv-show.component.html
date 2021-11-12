@@ -2,13 +2,16 @@
 <main id="content">
     <div class="bg-gray-1100 space-bottom-2 space-bottom-lg-3">
         <div class="bg-img-hero position-relative" style="background-image:
-            url(https://image.tmdb.org/t/p/original/{{data.backdrop_path}});
+            url(https://image.tmdb.org/t/p/original/{{backdrop_path}});
             height:350px; filter: blur(4px);"></div>
 
         <section>
             <div class="container px-md-6">
                 <div class="row">
-                        <app-main-image [data]='data' class="col-md-3"></app-main-image>
+
+                    <app-main-image [data]='data' class="col-md-3">
+                    </app-main-image>
+
                     <div class="col-md-9">
                         <div class="pl-md-2 pt-4">
                             <div class="row border-bottom border-gray-5600
@@ -32,7 +35,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-6" *ngIf="trailers.length> 0">
+                            <div class="mb-6" *ngIf="trailers">
                                 <div class="font-size-26 text-gray-5500 mb-3
                                     pb-1">Trailers & Clips</div>
                                 <div class="row dark mx-n2">
@@ -44,7 +47,7 @@
                             </also-directed-by>
                             <also-might-like [data]="similarMovies"></also-might-like>
                             <crew-and-cast [crew]="crew" [cast]="cast"></crew-and-cast>
-                            <reviews [reviews]="reviews.slice(0,2)"></reviews>
+                            <reviews [reviews]="reviews"></reviews>
                             <div>
                                 <div class="home-section">
                                     <header class="d-md-flex align-items-center

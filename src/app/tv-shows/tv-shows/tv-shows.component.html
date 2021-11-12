@@ -221,7 +221,7 @@
                                 </div>
                                 <div class="mb-6 pb-1">
                                     <h6 class="font-size-22 text-white font-weight-medium border-bottom border-gray-3700 pb-2 mb-4">
-                                        Movies by Year</h6>
+                                        tvs by Year</h6>
                                     <ul class="list-unstyled d-flex flex-wrap mb-0">
                                         <li class="pr-1 pb-1">
                                             <div class="h-bg-3 bg-gray-5100 px-2 py-2 d-inline-block">
@@ -294,7 +294,7 @@
                             <div class="home-section mb-5">
                                 <header class="d-md-flex align-items-center justify-content-between mb-3 mb-lg-1 pb-2 w-100 border-bottom border-gray-3900">
                                     <h6 class="d-block position-relative font-size-24 font-weight-medium overflow-md-hidden m-0 text-white">
-                                        Movies</h6>
+                                        tvs</h6>
                                 </header>
                                 <div class="d-xl-flex align-items-center justify-content-between">
                                     <div class="d-none d-xl-flex align-items-center justify-content-center justify-content-md-start mb-3 mb-md-0">
@@ -616,7 +616,7 @@
                                                                                 </div>
                                                                                 <div class="mb-6 pb-1">
                                                                                     <h6 class="font-size-22 text-white font-weight-medium border-bottom border-gray-3700 pb-2 mb-4">
-                                                                                        Movies by Year</h6>
+                                                                                        tvs by Year</h6>
                                                                                     <ul class="list-unstyled d-flex flex-wrap mb-0">
                                                                                         <li class="pr-1 pb-1">
                                                                                             <div class="h-bg-3 bg-gray-5100 px-2 py-2 d-inline-block">
@@ -860,20 +860,20 @@
                             <div class="tab-pane fade show active" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab">
                                 <div class="border-bottom border-gray-3800 mb-4 pb-5">
                                     <div class="row mx-n2">
-                                        <div class="col-md-3 col-lg-3 px-2" *ngFor="let movie of data | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages }">
+                                        <div class="col-md-3 col-lg-3 px-2" *ngFor="let tv of data | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages }">
                                             <div class="product mb-4">
                                                 <div class="product-image mb-2">
-                                                    <a class="d-block position-relative stretched-link" routerLink="/movie/{{movie.id}}">
-                                                        <img class="img-fluid" src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="Image-Description">
+                                                    <a class="d-block position-relative stretched-link" routerLink="/tvshow/{{tv.id}}">
+                                                        <img class="img-fluid" src="https://image.tmdb.org/t/p/w200/{{tv.poster_path}}" alt="Image-Description">
                                                     </a>
                                                 </div>
                                                 <div class="product-meta font-size-12">
-                                                    <span><a routerLink="/movie/{{movie.id}}" class="h-g-primary"
-                                                            tabindex="0">{{movie.first_air_date.split("-",1)}}</a></span>
-                                                    <card-li [data]="mapGenres(movie, genres)"></card-li>
+                                                    <span><a routerLink="/tvshow/{{tv.id}}" class="h-g-primary"
+                                                            tabindex="0">{{tv.first_air_date.split("-",1)}}</a></span>
+                                                    <!-- <card-li [data]="mapGenres(tv, genres)"></card-li> -->
                                                 </div>
                                                 <h6 class="font-size-1 font-weight-bold mb-0 product-title d-inline-block">
-                                                    <a routerLink="/movie/{{movie.id}}">{{movie.original_name}}</a>
+                                                    <a routerLink="/tvshow/{{tv.id}}">{{tv.original_name}}</a>
                                                 </h6>
                                             </div>
                                         </div>
@@ -885,20 +885,20 @@
                                 <div class="border-bottom border-gray-3800 mb-4 pb-5">
                                     <div class="row row-cols-1 row-cols-md-3 row-cols-wd-5 mx-n2">
 
-                                        <div class="col px-2" *ngFor="let movie of data | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages };">
+                                        <div class="col px-2" *ngFor="let tv of data | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages };">
                                             <div class="product mb-4">
                                                 <div class="product-image mb-2">
-                                                    <a class="d-block position-relative stretched-link" routerLink="/movie/{{movie.id}}">
-                                                        <img class="img-fluid" src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="Image-Description">
+                                                    <a class="d-block position-relative stretched-link" routerLink="/tvshow/{{tv.id}}">
+                                                        <img class="img-fluid" src="https://image.tmdb.org/t/p/w200/{{tv.poster_path}}" alt="Image-Description">
                                                     </a>
                                                 </div>
                                                 <div class="product-meta font-size-12">
-                                                    <span><a routerLink="/movie/{{movie.id}}" class="h-g-primary"
-                                                            tabindex="0">{{movie.first_air_date.split("-",1)}}</a></span>
-                                                    <card-li [data]="mapGenres(movie, genres)"></card-li>
+                                                    <span><a routerLink="/tvshow/{{tv.id}}" class="h-g-primary"
+                                                            tabindex="0">{{tv.first_air_date.split("-",1)}}</a></span>
+                                                    <!-- <card-li [data]="mapGenres(tv, genres)"></card-li> -->
                                                 </div>
                                                 <h6 class="font-size-1 font-weight-bold mb-0 product-title d-inline-block">
-                                                    <a routerLink="/movie/{{movie.id}}">Black Mirror</a>
+                                                    <a routerLink="/tvshow/{{tv.id}}">Black Mirror</a>
                                                 </h6>
                                             </div>
                                         </div>
@@ -908,31 +908,31 @@
                             </div>
                             <div class="tab-pane fade" id="pills-three-example1" role="tabpanel" aria-labelledby="pills-three-example1-tab">
 
-                                <div class="product h-btn-show dark" *ngFor="let movie of data | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages }">
+                                <div class="product h-btn-show dark" *ngFor="let tv of data | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages }">
                                     <div class="row no-gutters border-bottom border-gray-3800 py-4">
                                         <div class="col-md-2">
                                             <div class="product-image mb-2 mb-md-0">
-                                                <a routerLink="/movie/{{movie.id}}" class="d-inline-block position-relative stretched-link"> <img class="img-fluid" src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="Image-Description"></a>
+                                                <a routerLink="/tvshow/{{tv.id}}" class="d-inline-block position-relative stretched-link"> <img class="img-fluid" src="https://image.tmdb.org/t/p/w200/{{tv.poster_path}}" alt="Image-Description"></a>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="px-md-4d mt-2d">
                                                 <div class="product-meta font-size-12">
-                                                    <span><a routerLink="/movie/{{movie.id}}" class="h-g-primary"
-                                                            tabindex="0">{{movie.first_air_date.split("-",1)}}</a></span>
-                                                    <card-li [data]="mapGenres(movie, genres)"></card-li>
+                                                    <span><a routerLink="/tvshow/{{tv.id}}" class="h-g-primary"
+                                                            tabindex="0">{{tv.first_air_date.split("-",1)}}</a></span>
+                                                    <!-- <card-li [data]="mapGenres(tv, genres)"></card-li> -->
                                                 </div>
                                                 <div class="font-size-17 font-weight-bold mb-2 product-title d-inline-block">
-                                                    <a routerLink="/movie/{{movie.id}}">{{movie.original_name}}</a>
+                                                    <a routerLink="/tvshow/{{tv.id}}">{{tv.original_name}}</a>
                                                 </div>
                                                 <p class="font-size-1 line-clamp-1 text-gray-1300 mb-7">
-                                                    {{movie.overview}}</p>
+                                                    {{tv.overview}}</p>
                                                 <div class="d-md-flex">
-                                                    <a routerLink="/movie/{{movie.id}}" class="btn btn-gray-1 d-flex align-items-center justify-content-center mb-3 mb-md-0 font-size-12 px-3 h-44rem font-secondary" tabindex="0">
+                                                    <a routerLink="/tvshow/{{tv.id}}" class="btn btn-gray-1 d-flex align-items-center justify-content-center mb-3 mb-md-0 font-size-12 px-3 h-44rem font-secondary" tabindex="0">
                                                         <span class="mx-1">WATCH NOW</span>
                                                     </a>
 
-                                                    <a routerLink="/movie/{{movie.id}}" class="d-flex align-items-center justify-content-center font-secondary font-size-12 text-white font-weight-bold ml-md-3 pl-md-1" tabindex="0">+ PLAYLIST</a>
+                                                    <a routerLink="/tvshow/{{tv.id}}" class="d-flex align-items-center justify-content-center font-secondary font-size-12 text-white font-weight-bold ml-md-3 pl-md-1" tabindex="0">+ PLAYLIST</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -940,11 +940,11 @@
                                             <div class="rating-number position-relative font-size-42 mb-3">
                                                 <i class="fas fa-star d-flex justify-content-center">
                                                 </i>
-                                                <span class="font-size-13 font-weight-bold text-gray-1300 position-absolute bottom-0 top-0 right-0 left-0 d-flex align-items-center justify-content-center">{{movie.vote_average}}</span>
+                                                <span class="font-size-13 font-weight-bold text-gray-1300 position-absolute bottom-0 top-0 right-0 left-0 d-flex align-items-center justify-content-center">{{tv.vote_average}}</span>
                                             </div>
 
                                             <div class="font-size-12 text-gray-1300 text-center text-lh-1">
-                                                <span>{{movie.vote_count}}<br>Votes</span>
+                                                <span>{{tv.vote_count}}<br>Votes</span>
                                             </div>
                                         </div>
                                     </div>
@@ -953,31 +953,31 @@
 
                             <div class="tab-pane fade" id="pills-four-example1" role="tabpanel" aria-labelledby="pills-four-example1-tab">
 
-                                <div class="product h-btn-show dark" *ngFor="let movie of data | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages }">
+                                <div class="product h-btn-show dark" *ngFor="let tv of data | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages }">
                                     <div class="row no-gutters border-bottom border-gray-3800 py-4">
                                         <div class="col-md-1">
                                             <div class="product-image mb-2 mb-md-0">
-                                                <a routerLink="/movie/{{movie.id}}" class="d-inline-block position-relative stretched-link"> <img class="img-fluid" src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="Image-Description"></a>
+                                                <a routerLink="/tvshow/{{tv.id}}" class="d-inline-block position-relative stretched-link"> <img class="img-fluid" src="https://image.tmdb.org/t/p/w200/{{tv.poster_path}}" alt="Image-Description"></a>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="px-md-4d mt-2d">
                                                 <div class="product-meta font-size-12">
-                                                    <span><a routerLink="/movie/{{movie.id}}" class="h-g-primary"
-                                                            tabindex="0">{{movie.first_air_date.split("-",1)}}</a></span>
-                                                    <card-li [data]="mapGenres(movie, genres)"></card-li>
+                                                    <span><a routerLink="/tvshow/{{tv.id}}" class="h-g-primary"
+                                                            tabindex="0">{{tv.first_air_date.split("-",1)}}</a></span>
+                                                    <!-- <card-li [data]="mapGenres(tv, genres)"></card-li> -->
                                                 </div>
                                                 <div class="font-size-1 font-weight-bold mb-2 product-title d-inline-block">
-                                                    <a routerLink="/movie/{{movie.id}}">{{movie.original_name}}</a>
+                                                    <a routerLink="/tvshow/{{tv.id}}">{{tv.original_name}}</a>
                                                 </div>
                                                 <p class="font-size-1 line-clamp-1 text-gray-1300 mb-4">
-                                                    {{movie.overview}}</p>
+                                                    {{tv.overview}}</p>
                                                 <div class="d-md-flex">
-                                                    <a routerLink="/movie/{{movie.id}}" class="btn btn-gray-1 d-flex align-items-center justify-content-center mb-3 mb-md-0 font-size-12 px-3 h-44rem font-secondary" tabindex="0">
+                                                    <a routerLink="/tvshow/{{tv.id}}" class="btn btn-gray-1 d-flex align-items-center justify-content-center mb-3 mb-md-0 font-size-12 px-3 h-44rem font-secondary" tabindex="0">
                                                         <span class="mx-1">WATCH NOW</span>
                                                     </a>
 
-                                                    <a routerLink="/movie/{{movie.id}}" class="d-flex align-items-center justify-content-center font-secondary font-size-12 text-white font-weight-bold ml-md-3 pl-md-1" tabindex="0">+ PLAYLIST</a>
+                                                    <a routerLink="/tvshow/{{tv.id}}" class="d-flex align-items-center justify-content-center font-secondary font-size-12 text-white font-weight-bold ml-md-3 pl-md-1" tabindex="0">+ PLAYLIST</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -986,11 +986,11 @@
                                                 <div class="rating-number position-relative font-size-42">
                                                     <i class="fas fa-star d-flex justify-content-center">
                                                     </i>
-                                                    <span class="font-size-13 font-weight-bold text-gray-1300 position-absolute bottom-0 top-0 right-0 left-0 d-flex align-items-center justify-content-center">{{movie.vote_average}}</span>
+                                                    <span class="font-size-13 font-weight-bold text-gray-1300 position-absolute bottom-0 top-0 right-0 left-0 d-flex align-items-center justify-content-center">{{tv.vote_average}}</span>
                                                 </div>
 
                                                 <div class="font-size-12 text-gray-1300 text-center text-lh-1 ml-3">
-                                                    <span>{{movie.vote_count}}<br>Votes</span>
+                                                    <span>{{tv.vote_count}}<br>Votes</span>
                                                 </div>
                                             </div>
                                         </div>

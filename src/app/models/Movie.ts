@@ -14,15 +14,17 @@ export class Movie {
       public genre_ids : number[],
       public homepage: string,
       public overview : string,
+      public first_air_date: string,
       public id : number,
       public imdb_id : string,
       public original_language : string,
       public original_title : string,
+      public original_name : string,
       public ovierview : string,
       public popularity : number,
       public poster_path : string,
       public reviews: {results:Reviews[]},
-      public keywords: {keywords: KeyWords[]},
+      public keywords: {keywords: KeyWords[],results: KeyWords[]},
       public production_companies: {
         id: number,
         name: string

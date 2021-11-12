@@ -46,8 +46,8 @@ export class SingleMovieComponent implements OnInit {
         this.trailers = DataHelper.FindMainTrailers(response.videos.results)
         this.crew = DataHelper.MostPopularPeople(response.credits.crew);
         this.cast = DataHelper.MostPopularPeople(response.credits.cast);
-        this.budget = DataHelper.FormatNumber(response.budget.toString()); 
-        this.revenue = DataHelper.FormatNumber(response.revenue.toString()); 
+        this.budget = DataHelper.FormatNumber(response.budget); 
+        this.revenue = DataHelper.FormatNumber(response.revenue); 
         this.mainCast = DataHelper.MapJob(response.credits.crew);
         this.releaseDate = DataHelper.FormatDate(response.release_date);
         this.similarMovies = DataHelper.MostPopularRecomendations(response.similar.results ,id.params.id);

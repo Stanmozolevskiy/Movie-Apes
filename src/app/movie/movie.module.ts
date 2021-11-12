@@ -9,14 +9,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonComponentsModule } from './../common-components/common-components.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { SingleMovieComponent } from './single-movie/single-movie.component';
-import { MovieInfoComponent } from './movie-info/movie-info.component';
 import { MoviesComponent } from './movies/movies.component';
 
 @NgModule({
   declarations: [
     MoviesComponent,
-    SingleMovieComponent,
-    MovieInfoComponent
+    SingleMovieComponent
   ],
   imports: [
     CommonModule,

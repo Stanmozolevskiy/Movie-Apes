@@ -51,7 +51,7 @@ export class DataHelper {
                         .splice(peopleArray.length - 6, peopleArray.length)
                         .sort((x:any, y:any)=> y.popularity - x.popularity);
     }
-    public static MostPopularRecomendations(recomendationsArray:Movie[], sourceId: number){
+    public static MostPopularRecomendations(recomendationsArray:any[], sourceId: number){
       return recomendationsArray.filter((i:any)=> i.id != sourceId).sort((x:any, y:any)=> y.popularity - x.popularity).splice(0, 6);
     }
     public static MostPopularNowPlaying(dataArray: any){
@@ -59,11 +59,11 @@ export class DataHelper {
       return mostPopular.sort((x:any, y:any)=>  (y.release_date > x.release_date)? 1 : (( x.release_date >  y.release_date)? -1:0 ));
     }
 
-    public static FormatNumber(number: string){
-      if(!number) return number;
-      
+    public static FormatNumber(number: number){
+      if(!number) return 'unknown';
+      let stringNumber =  number.toString();
       let returnNumber = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD',  currencyDisplay: 'narrowSymbol' })
-      .format(parseInt(number));
+      .format(parseInt(stringNumber));
 
       if (returnNumber.length >= 12) return returnNumber.slice(0, returnNumber.length -11);
       

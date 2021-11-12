@@ -1,10 +1,10 @@
+import { MovieResponce } from './../../models/MovieResponce';
 import { Component, OnInit } from '@angular/core';
 
-import { TvResults } from './../../models/TvResults';
-import { Tv } from './../../models/Tv';
 import { TvShowsDataServiceService } from './../tv-shows-data-service.service';
 import { GenreResponce } from '../../models/GenreResponce';
 import { Genres } from '../../models/Genres';
+import { Movie } from 'src/app/models/Movie';
 
 @Component({
   selector: 'app-tv-shows',
@@ -12,10 +12,10 @@ import { Genres } from '../../models/Genres';
   styleUrls: ['./tv-shows.component.css']
 })
 export class TvShowsComponent implements OnInit {
-  data!: Tv[];
+  data!: Movie[];
   genres!: Genres[];
   totalPages!:number;
-  popular!:Tv[];
+  popular!:Movie[];
   page!: number;
 
   constructor(private tvShowsDataService: TvShowsDataServiceService) { }
@@ -25,12 +25,12 @@ export class TvShowsComponent implements OnInit {
     this.tvShowsDataService.getGenres().subscribe((res:GenreResponce)=> {
       this.genres = res.genres;
     });
-    this.tvShowsDataService.getPopular("tv").subscribe((res: TvResults)=> {
+    this.tvShowsDataService.getPopular("tv").subscribe((res: MovieResponce)=> {
      this.popular = res.results.slice(0,5);
     });   
   }
   handlePageChange(event:number = 1 ){
-    this.tvShowsDataService.getAll(event).subscribe((res: TvResults) => {
+    this.tvShowsDataService.getAll(event).subscribe((res: MovieResponce) => {
       this.data = res.results;
       this.page = res.page;
       this.totalPages = res.page;
@@ -39,7 +39,7 @@ export class TvShowsComponent implements OnInit {
 
   // mappes list of gsenres from one API call to a call that provides the movies
   // and returns an array with genres 
-  mapGenres(movieObject:Tv, genresArray:Genres[]){
+  mapGenres(movieObject:Movie, genresArray:Genres[]){
     if(movieObject && genresArray){
       return movieObject.genre_ids.map((genreFromMovie:any)=> 
                genresArray.filter((allGenres:Genres) => genreFromMovie == allGenres.id))

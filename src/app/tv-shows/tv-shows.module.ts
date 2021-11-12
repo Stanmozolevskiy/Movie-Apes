@@ -8,12 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { TvShowsComponent } from './tv-shows/tv-shows.component';
 import { CommonComponentsModule } from './../common-components/common-components.module';
 import { AppRoutingModule } from '../app-routing.module';
+import { SingleTvShowComponent } from './single-tv-show/single-tv-show.component';
 
 
 
 @NgModule({
   declarations: [
-    TvShowsComponent
+    TvShowsComponent,
+    SingleTvShowComponent
   ],
   imports: [
     CommonModule,

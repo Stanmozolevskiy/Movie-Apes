@@ -1,7 +1,6 @@
-import { KeyWords } from './../../models/KeyWords';
-import { Crew } from './../../models/Crew';
-import { Genres } from './../../models/Genres';
-import { Movie } from './../../models/Movie';
+import { KeyWords } from '../../models/KeyWords';
+import { Crew } from '../../models/Crew';
+import { Genres } from '../../models/Genres';
 
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -11,7 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./movie-info.component.css']
 })
 export class MovieInfoComponent implements OnInit {
-  @Input() data!:Movie;
+  @Input() data!:any;
   @Input() mainCast!:Crew[];
   @Input() genres!:Genres;
   @Input() keywords!:KeyWords[];
@@ -23,6 +22,5 @@ export class MovieInfoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
 
 }

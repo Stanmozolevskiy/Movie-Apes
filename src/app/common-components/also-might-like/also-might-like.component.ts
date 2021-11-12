@@ -1,4 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
+import { Router } from '@angular/router';
 import { Movie } from 'src/app/models/Movie';
 
 @Component({
@@ -8,10 +9,11 @@ import { Movie } from 'src/app/models/Movie';
 })
 export class AlsoMightLikeComponent implements OnInit {
   @Input() data!:Movie[];
-
-  constructor() { }
+  url!:string;
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.url =  this.router.routerState.snapshot.url.split("/")[1];
   }
 
 }

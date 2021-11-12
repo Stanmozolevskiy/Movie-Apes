@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Movie } from 'src/app/models/Movie';
 
 @Component({
@@ -6,12 +6,6 @@ import { Movie } from 'src/app/models/Movie';
   templateUrl: './main-image.component.html',
   styleUrls: ['./main-image.component.css']
 })
-export class MainImageComponent implements OnInit {
-
-  constructor() { }
+export class MainImageComponent {
   @Input() data!: Movie;
-
-  ngOnInit(): void {
-  }
-
 }

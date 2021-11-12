@@ -2,29 +2,6 @@
     <div class="mt-n8">
         <img class="img-fluid" src="https://image.tmdb.org/t/p/w300/{{data.poster_path}}" alt="Image-Description">
     </div>
-    <div class="bg-gray-3100">
-        <div>
-            <ul class="list-unstyled">
-
-                <li class="border-bottom border-gray-3200">
-                    <div class="p-4">
-                        <a class="d-block mt-1" href="https://play.google.com/store/search?q={{data.original_title
-                            +' '+
-                            data.release_date.split('',
-                            4).join('')}}&c=movies&hl=en_US&gl=US">
-                            <img class="img-fluid" src="../../../assets/img/200x40/img3.png" alt="Image-Description">
-                        </a>
-                    </div>
-                </li>
-                <li class="border-bottom border-gray-3200">
-                    <div class="p-4">
-                        <a class="d-block mt-1" href="https://www.amazon.com/s?k={{data.original_title}}+%28{{data.release_date.split('',
-                            4).join('')}}%29&i=shop-instant-video&ref=nb_sb_noss_2`">
-                            <img class="img-fluid" src="../../../assets/img/200x40/img4.png" alt="Image-Description">
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <app-rent-buttons *ngIf='data.release_date' [original_title]='data.original_title' [release_date]='data.release_date'>
+    </app-rent-buttons>
 </div>
