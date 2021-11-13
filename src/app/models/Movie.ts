@@ -56,6 +56,10 @@ export class Movie {
       public video : boolean,
       public videos: {results: Videos[]},
       public vote_average : number,
-      public vote_count : number) { }
+      public vote_count : number,
+      public episode_run_time:number[],
+      public number_of_seasons: number,
+      public number_of_episodes: number
+      ) { }
   }
   

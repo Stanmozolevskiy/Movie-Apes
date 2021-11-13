@@ -8,9 +8,9 @@ import { SingleTvShowComponent } from './tv-shows/single-tv-show/single-tv-show.
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'movies', component: MoviesComponent },
+  { path: 'movie', component: MoviesComponent },
   { path: 'movie/:id', component: SingleMovieComponent },
-  { path: 'tvshows', component: TvShowsComponent },
+  { path: 'tvshow', component: TvShowsComponent },
   { path: 'tvshow/:id', component: SingleTvShowComponent },
 ];
 

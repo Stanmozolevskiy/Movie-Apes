@@ -33,7 +33,7 @@ export class TvShowsComponent implements OnInit {
     this.tvShowsDataService.getAll(event).subscribe((res: MovieResponce) => {
       this.data = res.results;
       this.page = res.page;
-      this.totalPages = res.page;
+      this.totalPages = res.total_results;
     });
   }
 

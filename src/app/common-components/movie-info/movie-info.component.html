@@ -20,7 +20,9 @@
     
     <ul class="list-unstyled nav nav-meta font-secondary mb-3 pb-1 flex-nowrap flex-lg-wrap overflow-auto overflow-lg-hidden">
         <li class="text-white flex-shrink-0 flex-shrink-lg-1">{{releaseDate}}</li>
-        <li class="text-white flex-shrink-0 flex-shrink-lg-1">{{data.runtime}} m</li>
+        <li class="text-white flex-shrink-0 flex-shrink-lg-1">{{data.runtime || data.episode_run_time[0]}} m</li>
+        <li *ngIf="data.number_of_seasons" class="text-white flex-shrink-0 flex-shrink-lg-1">{{data.number_of_seasons}} seasons</li>
+        <li *ngIf="data.number_of_episodes" class="text-white flex-shrink-0 flex-shrink-lg-1">{{data.number_of_episodes}} episodes</li>
         <li class="text-white flex-shrink-0 flex-shrink-lg-1">
             <a href="#"  *ngFor="let genre of data.genres" class="text-white">{{genre.name}}  </a>
             <span></span>

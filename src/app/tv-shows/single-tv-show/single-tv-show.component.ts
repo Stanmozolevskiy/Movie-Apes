@@ -54,7 +54,6 @@ export class SingleTvShowComponent implements OnInit {
             this.mainCast = DataHelper.MapJob(response.credits.crew);
             this.releaseDate = DataHelper.FormatDate(response.first_air_date);
             this.similarMovies = DataHelper.MostPopularRecomendations(response.similar.results ,id.params.id);
-            
             let director:Crew = DataHelper.FindDirector(response.credits.crew);
             this.director = director;
             

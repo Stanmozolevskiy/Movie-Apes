@@ -3,6 +3,7 @@ import { Crew } from '../../models/Crew';
 import { Genres } from '../../models/Genres';
 
 import { Component, OnInit, Input } from '@angular/core';
+import { Movie } from 'src/app/models/Movie';
 
 @Component({
   selector: 'movie-info',
@@ -10,7 +11,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./movie-info.component.css']
 })
 export class MovieInfoComponent implements OnInit {
-  @Input() data!:any;
+  @Input() data!:Movie;
   @Input() mainCast!:Crew[];
   @Input() genres!:Genres;
   @Input() keywords!:KeyWords[];
