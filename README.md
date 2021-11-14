@@ -18,3 +18,9 @@ you can navigate to the docs folder and run 'copy index.html 404.html
 3)```git add . git commit m- "deploy" git puch ```
 
 
+# Technologies used 
+
+- [x] Angular 12 for the frontend
+- [ ] The Movie Data Base api  
+
+
