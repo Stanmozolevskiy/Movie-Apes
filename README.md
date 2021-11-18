@@ -21,7 +21,7 @@ you can navigate to the docs folder and run 'copy index.html 404.html
 # Technologies used 
 
 - [x] Angular 12 for the frontend
-- [ ] The Movie Data Base api  
+- [x] The Movie Data Base api  
 
 
 Structuarly every page devided to a specific ngModule with the separate data service.
