@@ -95,6 +95,9 @@ THE SOFTWARE.
 font-awesome
 (OFL-1.1 AND MIT)
 
+ngx-device-detector
+MIT
+
 ngx-pagination
 MIT
 The MIT License (MIT)
