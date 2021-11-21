@@ -15,7 +15,6 @@ query!:string;
 
   onSearch(e:any){
     this.query = e;
-    console.log(e)
     this.router.navigateByUrl(this.query);
     this.query = '';
     return false;

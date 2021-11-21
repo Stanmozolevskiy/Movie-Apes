@@ -36,6 +36,7 @@ query!:string;
 
   handlePageChange(page:number = 1){
     this.searchDataservice.getAll(page, this.query).subscribe((res:MovieResponce)=>{
+      console.log(res)
       this.data = res.results
       this.page = res.page;
       this.totalPages = res.total_pages;
