@@ -12,7 +12,8 @@
                 <div class="row no-gutters">
                     <div class="col-md-3 col-lg-2">
                         <div class="product-image mb-2 mb-md-0">
-                            <a routerLink="/{{url}}/{{movie.id}}" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" ></a>
+                            <a routerLink="/{{url}}/{{movie.id}}" class="d-inline-block position-relative stretched-link"><img class="img-fluid" src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}"
+                                onerror='this.src="./assets/img/default/200x300-min.jpg"' ></a>
                         </div>
                     </div>
                   

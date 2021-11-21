@@ -1,6 +1,7 @@
 <div>
     <div class="mt-n8">
-        <img class="img-fluid" src="https://image.tmdb.org/t/p/w300/{{data.poster_path}}" alt="Image-Description">
+        <img class="img-fluid" src="https://image.tmdb.org/t/p/w300/{{data.poster_path}}"
+        onerror='this.src="./assets/img/default/300x450-min.jpg"' alt="Image-Description">
     </div>
     <app-rent-buttons *ngIf='data.release_date' [original_title]='data.original_title' [release_date]='data.release_date'>
     </app-rent-buttons>

@@ -33,6 +33,7 @@ export class TrailersComponent implements OnInit {
 
   ngOnInit(): void {
     this.setModalDimentions();
+    // console.log(this.deviceService.getDeviceInfo())
     if (!this.apiLoaded) {
       // This code loads the IFrame Player API code asynchronously, according to the instructions at
       // https://developers.google.com/youtube/iframe_api_reference#Getting_Started

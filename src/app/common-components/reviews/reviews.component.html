@@ -1,7 +1,8 @@
 <div class="border-bottom border-gray-5600 mb-4 pb-4" *ngFor="let review of reviews">
     <div class="d-flex mb-3 pb-1" >
         <div>
-            <img class="img-fluid rounded-circle" src="https://image.tmdb.org/t/p/w45/{{review.author_details.avatar_path}}">
+            <img class="img-fluid rounded-circle" src="https://image.tmdb.org/t/p/w45/{{review.author_details.avatar_path}}"
+            onerror='this.src="./assets/img/default/45x45-min.jpg"'>
         </div>
         <div class="ml-3">
             <div class="mb-2">
