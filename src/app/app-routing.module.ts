@@ -5,6 +5,7 @@ import { SingleMovieComponent } from './movie/single-movie/single-movie.componen
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SingleTvShowComponent } from './tv-shows/single-tv-show/single-tv-show.component';
+import { SearchComponent } from './search/search/search.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,6 +13,7 @@ const appRoutes: Routes = [
   { path: 'movie/:id', component: SingleMovieComponent },
   { path: 'tvshow', component: TvShowsComponent },
   { path: 'tvshow/:id', component: SingleTvShowComponent },
+  { path: ':query', component: SearchComponent },
 ];
 
 @NgModule({

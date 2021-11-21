@@ -30,8 +30,8 @@ export class MoviesComponent implements OnInit {
     });
   }
 
-  handlePageChange(event:number = 1 ){
-    this.movieDataservice.getAll(event).subscribe((res: MovieResponce) => {
+  handlePageChange(page:number = 1 ){
+    this.movieDataservice.getAll(page).subscribe((res: MovieResponce) => {
       this.data = res.results
       this.page = res.page;
       this.totalPages = res.total_pages;

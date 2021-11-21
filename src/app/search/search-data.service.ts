@@ -12,10 +12,10 @@ import { Movie } from '../models/Movie';
 @Injectable({
   providedIn: 'root'
 })
-export class MovieDataServiceService {
+export class SearchDataService {
   private BaseUrl: string ="https://api.themoviedb.org/3/";
   private key: string = '?api_key=cc061ff1d569864c484d2086a5e5e248';
-  private discover: string = `discover`;
+  private search: string = `search`;
   private language: string = `&language=en-US`;
   private sort: string = `&sort_by=popularity.desc`;
   private includeVideo: string = `&include_video=false`;
@@ -39,9 +39,9 @@ export class MovieDataServiceService {
   getGenres():Observable<GenreResponce>{
     return this.HttpClient.get<GenreResponce>(`${this.BaseUrl}${this.genresUrl}${this.key}${this.language}`)
   };
-  getAll(page:number=1, subject: string="movie", sort: string='&sort_by=popularity.desc'): Observable<MovieResponce> {
+  getAll(page:number=1, query: string, sort: string='&sort_by=popularity.desc'): Observable<MovieResponce> {
     return this.HttpClient
-    .get<MovieResponce>(`${this.BaseUrl}${this.discover}/${subject}${this.key}${this.language}${this.sort}${this.includeVideo}&page=${page}`)
+    .get<MovieResponce>(`${this.BaseUrl}${this.search}/movie${this.key}${this.language}&query=${query}${this.sort}${this.includeVideo}&page=${page}`)
     };
   getPopular(subject: string, page:number=1 ): Observable<MovieResponce>{
     return this.HttpClient.get<MovieResponce>(`${this.BaseUrl}${subject}/popular${this.key}&page=${page}`)
