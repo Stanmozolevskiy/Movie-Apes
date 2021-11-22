@@ -566,7 +566,7 @@
                             <div class="tab-pane fade show active" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab">
                                 <div class="border-bottom border-gray-3800 mb-4 pb-5">
                                     <div class="row mx-n2">
-                                        <div class="col-md-3 col-lg-3 px-2" *ngFor="let movie of data | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages }">
+                                        <div class="col-md-3 col-lg-3 px-2" *ngFor="let movie of data | paginate: { itemsPerPage: 20, currentPage: page, totalItems: totalItems }">
                                             <div class="product mb-4">
                                                 <div class="product-image mb-2">
                                                     <a class="d-block position-relative stretched-link" routerLink="/movie/{{movie.id}}">
@@ -576,7 +576,7 @@
                                                 </div>
                                                 <div class="product-meta font-size-12">
                                                     <span><a routerLink="/movie/{{movie.id}}" class="h-g-primary"
-                                                            tabindex="0">{{movie.release_date.split("-",1)}}</a></span>
+                                                            tabindex="0">{{movie.release_date?.split("-",1)}}</a></span>
                                                     <card-li [data]="mapGenres(movie, genres)"></card-li>
                                                 </div>
                                                 <h6 class="font-size-1 font-weight-bold mb-0 product-title d-inline-block">
@@ -592,7 +592,7 @@
                                 <div class="border-bottom border-gray-3800 mb-4 pb-5">
                                     <div class="row row-cols-1 row-cols-md-3 row-cols-wd-5 mx-n2">
 
-                                        <div class="col px-2" *ngFor="let movie of data | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages };">
+                                        <div class="col px-2" *ngFor="let movie of data | paginate: { itemsPerPage: 20, currentPage: page, totalItems: totalItems };">
                                             <div class="product mb-4">
                                                 <div class="product-image mb-2">
                                                     <a class="d-block position-relative stretched-link" routerLink="/movie/{{movie.id}}">
@@ -602,7 +602,7 @@
                                                 </div>
                                                 <div class="product-meta font-size-12">
                                                     <span><a routerLink="/movie/{{movie.id}}" class="h-g-primary"
-                                                            tabindex="0">{{movie.release_date.split("-",1)}}</a></span>
+                                                            tabindex="0">{{movie.release_date?.split("-",1)}}</a></span>
                                                     <card-li [data]="mapGenres(movie, genres)"></card-li>
                                                 </div>
                                                 <h6 class="font-size-1 font-weight-bold mb-0 product-title d-inline-block">
@@ -616,7 +616,7 @@
                             </div>
                             <div class="tab-pane fade" id="pills-three-example1" role="tabpanel" aria-labelledby="pills-three-example1-tab">
 
-                                <div class="product h-btn-show dark" *ngFor="let movie of data | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages }">
+                                <div class="product h-btn-show dark" *ngFor="let movie of data | paginate: { itemsPerPage: 20, currentPage: page, totalItems: totalItems }">
                                     <div class="row no-gutters border-bottom border-gray-3800 py-4">
                                         <div class="col-md-2">
                                             <div class="product-image mb-2 mb-md-0">
@@ -628,7 +628,7 @@
                                             <div class="px-md-4d mt-2d">
                                                 <div class="product-meta font-size-12">
                                                     <span><a routerLink="/movie/{{movie.id}}" class="h-g-primary"
-                                                            tabindex="0">{{movie.release_date.split("-",1)}}</a></span>
+                                                            tabindex="0">{{movie.release_date?.split("-",1)}}</a></span>
                                                     <card-li [data]="mapGenres(movie, genres)"></card-li>
                                                 </div>
                                                 <div class="font-size-17 font-weight-bold mb-2 product-title d-inline-block">
@@ -662,7 +662,7 @@
 
                             <div class="tab-pane fade" id="pills-four-example1" role="tabpanel" aria-labelledby="pills-four-example1-tab">
 
-                                <div class="product h-btn-show dark" *ngFor="let movie of data | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages }">
+                                <div class="product h-btn-show dark" *ngFor="let movie of data | paginate: { itemsPerPage: 20, currentPage: page, totalItems: totalItems }">
                                     <div class="row no-gutters border-bottom border-gray-3800 py-4">
                                         <div class="col-md-1">
                                             <div class="product-image mb-2 mb-md-0">
@@ -674,7 +674,7 @@
                                             <div class="px-md-4d mt-2d">
                                                 <div class="product-meta font-size-12">
                                                     <span><a routerLink="/movie/{{movie.id}}" class="h-g-primary"
-                                                            tabindex="0">{{movie.release_date.split("-",1)}}</a></span>
+                                                            tabindex="0">{{movie.release_date?.split("-",1)}}</a></span>
                                                     <card-li [data]="mapGenres(movie, genres)"></card-li>
                                                 </div>
                                                 <div class="font-size-1 font-weight-bold mb-2 product-title d-inline-block">

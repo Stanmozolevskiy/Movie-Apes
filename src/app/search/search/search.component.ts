@@ -13,10 +13,9 @@ import { SearchDataService } from '../search-data.service';
 })
 export class SearchComponent implements OnInit {
 data!:Movie[];
-page!:number;
-totalPages!:number;
+page:number = 1;
+totalItems!:number;
 genres!:Genres[];
-popular!:Movie[];
 query!:string;
 
   constructor(private searchDataservice: SearchDataService, private route: ActivatedRoute) { }
@@ -24,22 +23,17 @@ query!:string;
   ngOnInit(): void {
     this.route.paramMap.subscribe((query:any)=> {
       this.query = query.params.query;
-      this.handlePageChange(1);
+      this.handlePageChange(this.page);
     })
     this.searchDataservice.getGenres().subscribe((res:GenreResponce)=> {
       this.genres = res.genres;
     });
-    this.searchDataservice.getPopular("movie").subscribe((res: MovieResponce)=> {
-      this.popular = res.results.slice(0,5);
-     });
   }
-
-  handlePageChange(page:number = 1){
+  handlePageChange(page:any){
+    this.page = page;
     this.searchDataservice.getAll(page, this.query).subscribe((res:MovieResponce)=>{
-      console.log(res)
       this.data = res.results
-      this.page = res.page;
-      this.totalPages = res.total_pages;
+      this.totalItems = res.total_results;
     });
   }
 

@@ -14,7 +14,7 @@ import { Movie } from 'src/app/models/Movie';
 export class TvShowsComponent implements OnInit {
   data!: Movie[];
   genres!: Genres[];
-  totalPages!:number;
+  totalItems!:number;
   popular!:Movie[];
   page!: number;
 
@@ -33,7 +33,7 @@ export class TvShowsComponent implements OnInit {
     this.tvShowsDataService.getAll(event).subscribe((res: MovieResponce) => {
       this.data = res.results;
       this.page = res.page;
-      this.totalPages = res.total_results;
+      this.totalItems = res.total_results;
     });
   }
 

@@ -3,17 +3,17 @@
     <!-- ========== MAIN CONTENT ========== -->
     <main id="content">
         <!--Hero Img -->
-        <div class="bg-img-hero" style="background-image: url(https://image.tmdb.org/t/p/original/{{headerMovie.backdrop_path}}); height: 650px; filter: brightness(100%)">
+        <div class="bg-img-hero" style="background-image: url(https://image.tmdb.org/t/p/original/{{headerMovie?.backdrop_path}}); height: 650px; filter: brightness(100%)">
             <!-- src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}} -->
             <div class="container px-md-5">
                 <div class="space-top-5">
                     <div class="pt-6">
                        
                         <h6 class="display-9 text-lh-1dot3 max-w-500 mb-1">
-                            <a routerLink="/movie/{{headerMovie.id}}" class="text-white">{{headerMovieTitle}}</a>
+                            <a routerLink="/movie/{{headerMovie?.id}}" class="text-white">{{headerMovieTitle}}</a>
                         </h6>
                         <div class="ml-n3">
-                            <a routerLink="/movie/{{headerMovie.id}}" class="js-fancybox d-flex text-white align-items-center" data-hs-fancybox-options='{
+                            <a routerLink="/movie/{{headerMovie?.id}}" class="js-fancybox d-flex text-white align-items-center" data-hs-fancybox-options='{
                                     "src": "//youtube.com/0qisGSwZym4",
                                     "speed": 700
                                 }'>
@@ -46,7 +46,7 @@
  
                             <div class="col-lg-7 px-2">
                                 <div class="row mx-n2 mt-n1" >
-                                    <div class="col-md-6 col-lg-4 px-2" *ngFor='let trailer of listTrailers.slice(0,6)'>
+                                    <div class="col-md-6 col-lg-4 px-2" *ngFor='let trailer of listTrailers?.slice(0,6)'>
                                         <trailers [data]="trailer" [textColor]='trailerTextCollor'></trailers>   
                                     </div>
                                 </div>
@@ -61,7 +61,7 @@
                 <div class="container px-md-4">
                     <div class="row no-gutters">
                             <div class="row mx-n2 mt-n1" >
-                                <div class="col-md-6 col-lg-4 px-2" *ngFor='let trailer of listTrailers.slice(7,15)'>
+                                <div class="col-md-6 col-lg-4 px-2" *ngFor='let trailer of listTrailers?.slice(7,15)'>
                                     <trailers [data]="trailer" [textColor]='trailerTextCollor'></trailers>   
                                 </div>
                             </div>
