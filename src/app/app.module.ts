@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MovieModule } from './movie/movie.module';
 import { HomeModule } from './home/home.module';
 import { FormsModule } from '@angular/forms';
+import { PeopleModule } from './people/people.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     HomeModule,
     TvShowsModule,
     SearchModule,
-    FormsModule
+    FormsModule,
+    PeopleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

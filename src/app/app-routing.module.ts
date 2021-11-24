@@ -1,3 +1,5 @@
+import { SinglePersonComponent } from './people/single-person/single-person.component';
+import { PeopleComponent } from './people/people/people.component';
 import { TvShowsComponent } from './tv-shows/tv-shows/tv-shows.component';
 import { HomeComponent } from './home/home.component';
 import { MoviesComponent } from './movie/movies/movies.component';
@@ -13,6 +15,8 @@ const appRoutes: Routes = [
   { path: 'movie/:id', component: SingleMovieComponent },
   { path: 'tvshow', component: TvShowsComponent },
   { path: 'tvshow/:id', component: SingleTvShowComponent },
+  { path: 'people', component: PeopleComponent },
+  { path: 'people/:id', component: SinglePersonComponent },
   { path: ':query', component: SearchComponent },
 ];
 
