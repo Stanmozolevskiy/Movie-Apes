@@ -1,1 +1,72 @@
-<p>single-person works!</p>
+<!-- ========== MAIN CONTENT ========== -->
+<main id="content">
+    <div class="bg-gray-1100 space-bottom-2 space-bottom-lg-3">
+        <div class="bg-img-hero position-relative" style="background-image:
+            url(https://image.tmdb.org/t/p/original/{{data?.profile_path}});
+            height:350px; filter: blur(4px);"></div>
+
+        <section>
+            <div class="container px-md-6">
+                <div class="row">
+                        <app-main-image [path]='posterPath' class="col-md-3"></app-main-image>
+                    <div class="col-md-9">
+                        <div class="pl-md-2 pt-4">
+                            <div class="row border-bottom border-gray-5600 no-gutters mb-4">
+                                <div class="col-md-7 col-lg">
+                                    <app-person-info [data]='data' [birthday]='birthday' [deathday]='deathday'
+                                         [biography]='biography'></app-person-info>
+                                </div>
+
+                                <div class="col-md-5 col-lg-auto">
+                                    <div class="pl-md-3">
+                                        <div class="d-flex flex-column">
+                                            <app-big-button [text]="'WATCH
+                                                NOW'"> [href]="'#'"</app-big-button>
+                                            <app-big-button [text]="'Buy
+                                                Tickets'"> [href]="'#'"</app-big-button>
+                                            <app-big-button-empty [text]="'+
+                                                PLAYLIST'"> [href]="'#'"</app-big-button-empty>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="mb-6" *ngIf="trailers.length> 0">
+                                <div class="font-size-26 text-gray-5500 mb-3
+                                    pb-1">Trailers & Clips
+                                </div>
+                                <div class="row dark mx-n2">
+                                    <trailers class="col-md-6 col-lg-3 px-2" *ngFor="let data of trailers" [data]="data"></trailers>
+                                </div>
+                            </div> -->
+
+                            <!-- <also-directed-by [director]="director" [data]="alsoDirector" [directorBio]="directorBio">
+                            </also-directed-by> -->
+                            <!-- <also-might-like [data]="similarMovies"></also-might-like>
+                            <crew-and-cast [crew]="crew" [cast]="cast"></crew-and-cast>
+                            <reviews [reviews]="reviews.slice(0,2)"></reviews> -->
+                            <div>
+                                <div class="home-section">
+                                    <header class="d-md-flex align-items-center
+                                        justify-content-between mb-3 pb-1
+                                        w-100">
+                                        <h6 class="section-title-dark d-block
+                                            position-relative font-size-18
+                                            font-weight-medium
+                                            overflow-md-hidden m-0 text-white
+                                            flex-grow-1">Add a review</h6>
+                                    </header>
+                                </div>
+
+                                <div class="text-gray-1300">You must be
+                                    <a href="#">logged in</a> to post a review.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<!-- ========== END MAIN CONTENT ========== -->

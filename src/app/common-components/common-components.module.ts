@@ -15,6 +15,7 @@ import { BigButtonEmptyComponent } from './big-button-empty/big-button-empty.com
 import { MainImageComponent } from './main-image/main-image.component';
 import { MovieInfoComponent } from './movie-info/movie-info.component'
 import { RentButtonsComponent } from './rent-buttons/rent-buttons.component';
+import { PersonInfoComponent } from './person-info/person-info.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RentButtonsComponent } from './rent-buttons/rent-buttons.component';
     BigButtonEmptyComponent,
     MainImageComponent,
     MovieInfoComponent,
-    RentButtonsComponent
+    RentButtonsComponent,
+    PersonInfoComponent
   ],
   imports: [
     CommonModule,
@@ -49,7 +51,8 @@ import { RentButtonsComponent } from './rent-buttons/rent-buttons.component';
     BigButtonEmptyComponent,
     MainImageComponent,
     MovieInfoComponent,
-    RentButtonsComponent
+    RentButtonsComponent,
+    PersonInfoComponent
   ]
 })
 export class CommonComponentsModule { }

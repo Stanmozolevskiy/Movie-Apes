@@ -82,6 +82,16 @@ export class DataHelper {
         return sortedArray.length <= 4 ?  sortedArray : sortedArray.splice(0, 4)
     }
 
+    public static FormatString(data: string){
+      if(data.length > 600){
+        //trim the string to the maximum length
+        let trimmedString = data.substr(0, 600);
+        //re-trim if we are in the middle of a word
+       return trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" "))) + ' ...';
+      }
+      return data;
+    }
+
 
 }
      

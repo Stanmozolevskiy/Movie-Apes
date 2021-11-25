@@ -6,9 +6,9 @@ export class Person{
        public adult: boolean,
        public also_known_as: [],
        public biography: string,
-       public birthday: boolean,
+       public birthday: string,
        public credits: {cast: Cast[], crew: Crew[]},
-       public deathday: boolean,
+       public deathday: string,
        public gender: number,
        public homepage: boolean,
        public id: number,
@@ -19,6 +19,10 @@ export class Person{
        public popularity: number,
        public profile_path: string,
        public known_for: KnownFor[],
+       public crefits:{
+           cast: Cast[],
+           crew: Crew[]
+       }
     ){}
 }
 

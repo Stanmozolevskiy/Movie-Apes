@@ -8,4 +8,5 @@ import { Movie } from 'src/app/models/Movie';
 })
 export class MainImageComponent {
   @Input() data!: Movie;
+  @Input() path!: string;
 }
