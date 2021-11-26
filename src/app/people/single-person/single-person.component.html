@@ -20,12 +20,9 @@
                                 <div class="col-md-5 col-lg-auto">
                                     <div class="pl-md-3">
                                         <div class="d-flex flex-column">
-                                            <app-big-button [text]="'WATCH
-                                                NOW'"> [href]="'#'"</app-big-button>
-                                            <app-big-button [text]="'Buy
-                                                Tickets'"> [href]="'#'"</app-big-button>
-                                            <app-big-button-empty [text]="'+
-                                                PLAYLIST'"> [href]="'#'"</app-big-button-empty>
+                                            <app-big-button [text]="'HOME PAGE'" [path]='data.homepage'></app-big-button>
+                                            <app-big-button [text]='"IMDB"' [path]='imdb'></app-big-button>
+                                            <app-big-button-empty [text]="'+PLAYLIST'"></app-big-button-empty>
                                         </div>
                                     </div>
                                 </div>
@@ -45,23 +42,7 @@
                             <!-- <also-might-like [data]="similarMovies"></also-might-like>
                             <crew-and-cast [crew]="crew" [cast]="cast"></crew-and-cast>
                             <reviews [reviews]="reviews.slice(0,2)"></reviews> -->
-                            <div>
-                                <div class="home-section">
-                                    <header class="d-md-flex align-items-center
-                                        justify-content-between mb-3 pb-1
-                                        w-100">
-                                        <h6 class="section-title-dark d-block
-                                            position-relative font-size-18
-                                            font-weight-medium
-                                            overflow-md-hidden m-0 text-white
-                                            flex-grow-1">Add a review</h6>
-                                    </header>
-                                </div>
-
-                                <div class="text-gray-1300">You must be
-                                    <a href="#">logged in</a> to post a review.
-                                </div>
-                            </div>
+                            <app-crew-and-cast-for-people  [crew]="data.credits.crew" [cast]="data.credits.cast"></app-crew-and-cast-for-people>
                         </div>
                     </div>
                 </div>

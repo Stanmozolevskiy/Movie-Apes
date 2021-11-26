@@ -1,0 +1,128 @@
+<div class="mb-6">
+    <div>
+        <div class="font-size-26 text-white mb-2 pb-1">Crew & Casts</div>
+        <ul class="nav tab-nav__v12 mb-4" id="pills-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link d-inline-block font-size-1 font-weight-semi-bold active" id="pills-one-example1-tab" data-toggle="pill" href="#pills-one-example1" role="tab" aria-controls="pills-one-example1" aria-selected="true">cast</a>
+            </li>
+            <li class="nav-item ml-2">
+                <a class="nav-link d-inline-block font-size-1 font-weight-semi-bold" id="pills-two-example1-tab" data-toggle="pill" href="#pills-two-example1" role="tab" aria-controls="pills-two-example1" aria-selected="false">crew</a>
+            </li>
+        </ul>
+    </div>
+
+
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab">
+
+        <section class="mb-6 mb-lg-7">
+
+                <div *ngFor="let movie of cast.slice(0,6)" class="row align-items-center overflow-auto overflow-md-auto border-bottom border-gray-5600 no-gutters">
+                    <div class="col-2 col-md-1">
+                        <img class="img-fluid pr-4" src="https://image.tmdb.org/t/p/w92/{{movie.poster_path}}"
+                            onerror='this.src="./assets/img/default/92x138-min.jpg"' alt="Image-Description">
+                    </div>
+                    <div class="col-6">
+                        <h6 class="font-size-15 font-weight-medium mb-0">
+                            <a routerLink="/movie/{{movie.id}}">{{movie.original_title}}</a>
+                        </h6>
+                    </div>
+                    <div class="col-3">
+                        <span class="font-size-1 line-clamp-1 text-gray-1300">popularity {{movie.popularity}}</span>
+                    </div>
+                    <div class="col-1 col-md">
+                        <div class="text-md-right">
+                            <span class="font-size-15 fon-weight-normal text-white">as {{movie.character}}</span>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="collapse mt-6" id="collapseExample">
+                        
+                    <div *ngFor="let movie of cast.slice(0,cast.length)" class="row align-items-center overflow-auto overflow-md-auto border-bottom border-gray-5600 no-gutters">
+                        <div class="col-2 col-md-1">
+                            <img class="img-fluid pr-4" src="https://image.tmdb.org/t/p/w92/{{movie.poster_path}}"
+                            onerror='this.src="./assets/img/default/92x138-min.jpg"' alt="Image-Description">
+                        </div>
+                        <div class="col-6">
+                            <h6 class="font-size-15 font-weight-medium mb-0">
+                                <a routerLink="/movie/{{movie.id}}">{{movie.original_title}}</a>
+                            </h6>
+                        </div>
+                        <div class="col-3">
+                            <span class="font-size-1 line-clamp-1 text-gray-1300">popularity {{movie.popularity}}</span>
+                        </div>
+                        <div class="col-1 col-md">
+                            <div class="text-md-right">
+                                <span class="font-size-15 fon-weight-normal text-white">as {{movie.character}}</span>
+                            </div>
+                        </div>
+                    </div> 
+
+                </div>
+
+                <div *ngIf='cast.length > 6' class="space-1 position-relative d-flex">
+                    <button class="btn btn-outline-1 mx-auto px-7 py-3 font-size-1 z-index-2 font-weight-medium font-secondary text-white" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        + View more
+                    </button>
+                </div>
+        </section>
+    </div>
+
+    
+    <div class="tab-pane fade" id="pills-two-example1" role="tabpanel" aria-labelledby="pills-two-example1-tab">
+        <section class="mb-6 mb-lg-7">
+        
+            <div *ngFor="let movie of crew.slice(0,6)" class="row align-items-center overflow-auto overflow-md-auto border-bottom border-gray-5600 no-gutters">
+                <div class="col-2 col-md-1">
+                    <img class="img-fluid pr-4" src="https://image.tmdb.org/t/p/w92/{{movie.poster_path}}"
+                    onerror='this.src="./assets/img/default/92x138-min.jpg"' alt="Image-Description">
+                </div>
+                <div class="col-6">
+                    <h6 class="font-size-15 font-weight-medium mb-0">
+                        <a routerLink="/movie/{{movie.id}}">{{movie.original_title}}</a>
+                    </h6>
+                </div>
+                <div class="col-3">
+                    <span class="font-size-1 line-clamp-1 text-gray-1300">popularity {{movie.popularity}}</span>
+                </div>
+                <div class="col-1 col-md">
+                    <div class="text-md-right">
+                        <span class="font-size-15 fon-weight-normal text-white">as {{movie.job}}</span>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="collapse mt-6" id="collapse2">
+                <div *ngFor="let movie of crew.slice(6,crew.length)" class="row align-items-center overflow-auto overflow-md-auto border-bottom border-gray-5600 no-gutters">
+                    <div class="col-2 col-md-1">
+                        <img class="img-fluid pr-4" src="https://image.tmdb.org/t/p/w92/{{movie.poster_path}}"
+                        onerror='this.src="./assets/img/default/92x138-min.jpg"' alt="Image-Description">
+                    </div>
+                    <div class="col-6">
+                        <h6 class="font-size-15 font-weight-medium mb-0">
+                            <a routerLink="/movie/{{movie.id}}">{{movie.original_title}}</a>
+                        </h6>
+                    </div>
+                    <div class="col-3">
+                        <span class="font-size-1 line-clamp-1 text-gray-1300">popularity {{movie.popularity}}</span>
+                    </div>
+                    <div class="col-1 col-md">
+                        <div class="text-md-right">
+                            <span class="font-size-15 fon-weight-normal text-white">as {{movie.job}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div *ngIf='crew.length > 6' class="space-1 position-relative d-flex">
+                <button class="btn btn-outline-1 mx-auto px-7 py-3 font-size-1 z-index-2 font-weight-medium font-secondary text-white" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                        + View more
+                </button>
+            </div>
+            
+        </section>
+        </div>
+    </div>
+</div>

@@ -16,6 +16,7 @@ import { MainImageComponent } from './main-image/main-image.component';
 import { MovieInfoComponent } from './movie-info/movie-info.component'
 import { RentButtonsComponent } from './rent-buttons/rent-buttons.component';
 import { PersonInfoComponent } from './person-info/person-info.component';
+import { CrewAndCastForPeopleComponent } from './crew-and-cast-for-people/crew-and-cast-for-people.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PersonInfoComponent } from './person-info/person-info.component';
     MainImageComponent,
     MovieInfoComponent,
     RentButtonsComponent,
-    PersonInfoComponent
+    PersonInfoComponent,
+    CrewAndCastForPeopleComponent
   ],
   imports: [
     CommonModule,
@@ -52,7 +54,8 @@ import { PersonInfoComponent } from './person-info/person-info.component';
     MainImageComponent,
     MovieInfoComponent,
     RentButtonsComponent,
-    PersonInfoComponent
+    PersonInfoComponent,
+    CrewAndCastForPeopleComponent
   ]
 })
 export class CommonComponentsModule { }

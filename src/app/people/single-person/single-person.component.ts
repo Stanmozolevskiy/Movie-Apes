@@ -15,14 +15,15 @@ export class SinglePersonComponent implements OnInit {
   birthday!: string;
   deathday!: string;
   biography!: string;
+  imdb!: string;
   constructor(private peopleDataservice: PeopleDataService, private route: ActivatedRoute ) { }
 
   ngOnInit(): void {
 
     this.route.paramMap.subscribe((id:any)=> {
             this.peopleDataservice.get('person',id.params.id).subscribe((res:Person) => {
-              console.log(res);
               this.posterPath = res.profile_path;
+              this.imdb = `https://www.imdb.com/name/${res.imdb_id}/?ref_=tt_ov_dr`;
               this.data = res;
               this.birthday = DataHelper.FormatDate(res.birthday);
               this.deathday = DataHelper.FormatDate(res.deathday);

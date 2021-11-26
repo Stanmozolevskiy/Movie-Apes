@@ -10,7 +10,7 @@ export class Person{
        public credits: {cast: Cast[], crew: Crew[]},
        public deathday: string,
        public gender: number,
-       public homepage: boolean,
+       public homepage: string,
        public id: number,
        public imdb_id: string,
        public known_for_department: string,

@@ -1,12 +1,12 @@
 <div class="mb-5 mb-md-0">
-    <h6 class="font-size-36 text-white mb-4 pb-1"> {{data.name}}</h6>
+    <h6 class="font-size-36 text-white mb-4 pb-1"> {{data?.name}}</h6>
     <div class="d-flex align-items-center mb-5">
         <div class="d-flex"  style="color: #24baef!important;">
             <div>
                 <i class="fa fa-star font-size-42" style="font-size: 30px"></i>
             </div>
             <div class="text-lh-1 ml-1">
-                <div class="font-size-24 font-weight-semi-bold">{{data.popularity}}</div>
+                <div class="font-size-24 font-weight-semi-bold">{{data?.popularity}}</div>
                
             </div>
         </div>
@@ -20,14 +20,14 @@
     
     <ul class="list-unstyled nav nav-meta font-secondary mb-3 pb-1 flex-nowrap flex-lg-wrap overflow-auto overflow-lg-hidden">
         <li class="text-white flex-shrink-0 flex-shrink-lg-1">{{birthday}}</li>
-        <li class="text-white flex-shrink-0 flex-shrink-lg-1">{{data.place_of_birth }}</li>
+        <li class="text-white flex-shrink-0 flex-shrink-lg-1">{{data?.place_of_birth }}</li>
     </ul>
 
     <ul *ngIf='deathday' class="list-unstyled nav nav-meta font-secondary mb-3 pb-1 flex-nowrap flex-lg-wrap overflow-auto overflow-lg-hidden">
         <li  class="text-white flex-shrink-0 flex-shrink-lg-1">Passed away: {{deathday}}</li>
     </ul>
     <ul class="list-unstyled nav nav-meta font-secondary mb-3 pb-1 flex-nowrap flex-lg-wrap overflow-auto overflow-lg-hidden">
-        <li  class="text-white flex-shrink-0 flex-shrink-lg-1">Known for: {{data.known_for_department}}</li>
+        <li  class="text-white flex-shrink-0 flex-shrink-lg-1">Known for: {{data?.known_for_department}}</li>
     </ul>
 
     <ul *ngIf="data.also_known_as.length > 0" class="list-unstyled nav nav-meta font-secondary mb-3 pb-1 flex-nowrap flex-lg-wrap overflow-auto overflow-lg-hidden">

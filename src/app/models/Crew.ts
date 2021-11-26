@@ -9,6 +9,9 @@ export class Crew{
        public known_for_department: string,
        public name: string,
        public original_name: string,
+       public original_title: string,
+       public character: string,
+       public poster_path: string,
        public popularity: number,
        public profile_path: boolean,
        public vote_count: number

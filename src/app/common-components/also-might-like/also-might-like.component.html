@@ -11,11 +11,11 @@
                     </a>
                 </div>
                 <div class="product-meta font-size-12 mb-1">
-                    <span><a routerLink="/{{url}}/{{item.id}}" class="h-g-primary">{{item.release_date?.split("-",1)}}</a></span>
+                    <span><a routerLink="/{{url}}/{{item.id}}" class="h-g-primary">{{item.release_date?.split("-",1) || item.first_air_date?.split("-",1)}}</a></span>
                     <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">Action</a></span>
                     <span><a href="../single-movies/single-movies-v1.html" class="h-g-primary">Fantacys</a></span>
                 </div>
-                <div  class="product-title font-weight-bold font-size-1"><a routerLink="/{{url}}/{{item.id}}">{{item.title}}</a></div>
+                <div  class="product-title font-weight-bold font-size-1"><a routerLink="/{{url}}/{{item.id}}">{{item.title || item.original_name}}</a></div>
             </div>
         </div>
 
