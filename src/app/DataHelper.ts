@@ -91,6 +91,15 @@ export class DataHelper {
       }
       return data;
     }
+    public static ShortBiography(data: string){
+      if(data.length > 200){
+        //trim the string to the maximum length
+        let trimmedString = data.substr(0, 200);
+        //re-trim if we are in the middle of a word
+       return trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" "))) + ' ...';
+      }
+      return data;
+    }
 
 
 }

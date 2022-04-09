@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { VideoResponse } from '../models/Videos';
 import { Movie } from '../models/Movie';
+import { PeopleResponse } from '../models/Person';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +22,11 @@ export class HomeDataServiceService {
   };
   getPopular(subject: string, page:number=1 ): Observable<MovieResponce>{
     return this.HttpClient.get<MovieResponce>(`${this.BaseUrl}${subject}/popular${this.key}&page=${page}`)
-  }
+  };
   getMovie(subject: string, id: number, apprend: string = "&append_to_response=videos,credits,reviews,keywords,similar"):Observable<Movie>{
     return this.HttpClient.get<Movie>(`${this.BaseUrl}/${subject}/${id}${this.key}${apprend}`);
   };
+  getPopularActors(page:number=1 ): Observable<PeopleResponse>{
+    return this.HttpClient.get<PeopleResponse>(`${this.BaseUrl}person/popular${this.key}&page=${page}`)
+  }
 }

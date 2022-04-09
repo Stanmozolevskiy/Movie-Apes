@@ -17,8 +17,8 @@
 
         <section class="mb-6 mb-lg-7">
 
-                <div *ngFor="let movie of cast.slice(0,6)" class="row align-items-center overflow-auto overflow-md-auto border-bottom border-gray-5600 no-gutters">
-                    <div class="col-2 col-md-1">
+                <div *ngFor="let movie of cast.slice(0,6)" class="row align-items-center overflow-auto overflow-md-auto border-bottom border-gray-5600 no-gutters padding-10">
+                    <div class="col-2 col-md-2">
                         <img class="img-fluid pr-4" src="https://image.tmdb.org/t/p/w92/{{movie.poster_path}}"
                             onerror='this.src="./assets/img/default/92x138-min.jpg"' alt="Image-Description">
                     </div>
@@ -39,8 +39,8 @@
 
                 <div class="collapse mt-6" id="collapseExample">
                         
-                    <div *ngFor="let movie of cast.slice(0,cast.length)" class="row align-items-center overflow-auto overflow-md-auto border-bottom border-gray-5600 no-gutters">
-                        <div class="col-2 col-md-1">
+                    <div *ngFor="let movie of cast.slice(0,cast.length)" class="row align-items-center overflow-auto overflow-md-auto border-bottom border-gray-5600 no-gutters padding-10">
+                        <div class="col-2 col-md-2">
                             <img class="img-fluid pr-4" src="https://image.tmdb.org/t/p/w92/{{movie.poster_path}}"
                             onerror='this.src="./assets/img/default/92x138-min.jpg"' alt="Image-Description">
                         </div>
@@ -73,8 +73,8 @@
     <div class="tab-pane fade" id="pills-two-example1" role="tabpanel" aria-labelledby="pills-two-example1-tab">
         <section class="mb-6 mb-lg-7">
         
-            <div *ngFor="let movie of crew.slice(0,6)" class="row align-items-center overflow-auto overflow-md-auto border-bottom border-gray-5600 no-gutters">
-                <div class="col-2 col-md-1">
+            <div *ngFor="let movie of crew.slice(0,6)" class="row align-items-center padding-10 overflow-auto overflow-md-auto border-bottom border-gray-5600 no-gutters">
+                <div class="col-2 col-md-2">
                     <img class="img-fluid pr-4" src="https://image.tmdb.org/t/p/w92/{{movie.poster_path}}"
                     onerror='this.src="./assets/img/default/92x138-min.jpg"' alt="Image-Description">
                 </div>
@@ -95,8 +95,8 @@
 
             
             <div class="collapse mt-6" id="collapse2">
-                <div *ngFor="let movie of crew.slice(6,crew.length)" class="row align-items-center overflow-auto overflow-md-auto border-bottom border-gray-5600 no-gutters">
-                    <div class="col-2 col-md-1">
+                <div *ngFor="let movie of crew.slice(6,crew.length)" class="row padding-10 align-items-center overflow-auto overflow-md-auto border-bottom border-gray-5600 no-gutters">
+                    <div class="col-2 col-md-2">
                         <img class="img-fluid pr-4" src="https://image.tmdb.org/t/p/w92/{{movie.poster_path}}"
                         onerror='this.src="./assets/img/default/92x138-min.jpg"' alt="Image-Description">
                     </div>

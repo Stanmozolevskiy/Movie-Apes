@@ -29,7 +29,6 @@ export class SinglePersonComponent implements OnInit {
               this.deathday = DataHelper.FormatDate(res.deathday);
               this.biography = DataHelper.FormatString(res.biography);
             })
-
     })
   }
 }

@@ -1,0 +1,33 @@
+
+    <div class="d-flex align-items-center justify-content-between mb-4 pb-1">
+        <h5 class="font-size-24 font-weight-medium font-secondary mb-0">Popular Actors</h5>
+        <div class="border-top col p-0 mx-3 border-gray-3600"></div>
+        <a routerLink="people" class="h-g-primary font-size-1 font-weight-medium font-secondary">VIEW ALL</a>
+    </div>
+    <div class="row mb-5 mb-lg-0">
+
+        <div class="col-lg-6" *ngFor="let person of popularActors">
+            <div class="mb-5 mb-lg-0">
+                <a routerLink="/people/{{person.id}}" class="d-block mb-3 pb-1">
+                    <img class="img-fluid" src="https://image.tmdb.org/t/p/w92/{{person.profile_path}}" alt="Image-Description">
+                </a>
+                <h6 class="font-size-22 font-weight-semi-bold font-secondary text-lh-1dot3 mb-1">
+                    <a routerLink="/people/{{person.id}}" class="text-dark">{{person.name}}</a>
+                </h6>
+                <div class="mb-2 pb-1">
+                    <a routerLink="/people/{{person.id}}" class="font-weight-bold font-size-13">
+                        <span>Hot Rumours</span>
+                    </a>
+                    <a routerLink="/people/{{person.id}}" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
+                        <span>{{person.birthday}}</span>
+                    </a>
+                    <a  routerLink="/people/{{person.id}}" class="product-comment font-weight-normal font-size-13 font-italic h-g-primary">
+                        <span>{{person.place_of_birth}}</span>
+                    </a>
+                </div>
+                <p class="font-size-1 mb-0">{{person.biography}}</p>
+            </div>
+        </div>
+      
+    </div>
+

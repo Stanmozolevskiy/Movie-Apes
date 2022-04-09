@@ -10,6 +10,8 @@ import { DescriptionComponent } from './blog-post/description/description.compon
 import { BlogPostComponent } from './blog-post/blog-post.component';
 import { HomeComponent } from './home.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { PopularActorsComponent } from './popular-actors/popular-actors.component';
+import { UpcomingMoviesComponent } from './upcoming-movies/upcoming-movies.component';
 
 
 
@@ -17,7 +19,9 @@ import { AppRoutingModule } from '../app-routing.module';
   declarations: [
     HomeComponent,
     BlogPostComponent,
-    DescriptionComponent
+    DescriptionComponent,
+    PopularActorsComponent,
+    UpcomingMoviesComponent
   ],
   imports: [
     CommonModule,

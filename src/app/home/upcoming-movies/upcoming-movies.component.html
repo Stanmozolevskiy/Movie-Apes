@@ -1,0 +1,14 @@
+<div class="pl-lg-8">
+    <div class="d-flex align-items-center justify-content-between mb-5">
+        <h5 class="font-size-24 font-weight-medium font-secondary text-lh-1dot25 mb-0">Upcoming <br> Movies</h5>
+        <div class="border-top col p-0 mx-3 border-gray-3600"></div>
+        <a  routerLink="movie" class="h-g-primary font-size-1 font-weight-medium font-secondary">VIEW ALL</a>
+    </div>
+    <ul class="list-unstyled" *ngFor="let movie of popular;let i=index;">
+        <li class="product_title font-size-17 font-weight-semi-bold font-secondary d-flex align-items-center text-lh-1dot25 mb-2 pb-1">
+            <div class="border rounded-circle d-flex align-items-center justify-content-center w-34rem h-34rem mr-2">{{i+1}}</div>
+            <a routerLink="/movie/{{!movie.id}}" class="ml-1">{{movie.title}}</a>
+        </li>
+       
+    </ul>
+</div>
